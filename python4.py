@@ -48,6 +48,15 @@ accaunt.paraYatir(600)
 # git push - sunucuya gönderme
 # git pull - sunucudan alma
 # git clone - projeyi klonlama
-# git chekout - branch geçişi
+# git chekout - branch geçişi / dal
 # git rm - dosyayı silme (takip edilenlerden)
-# deneme2
+# yeni bir branch açmak için : git checkout -b newbranch
+# git log - tüm geçmişi görme
+# git diff - farkları görme
+# git show - detaylı bilgi görme
+# git config --list - konfigürasyonları görme
+# git merge - birleştirme (branch ler arasıda)
+# git remote add - uzak repo ekleme
+# git fetch - uzak repo dan veriyi getirme
+# git push origin master - sunucuya gönder
+# main branch kontrol
