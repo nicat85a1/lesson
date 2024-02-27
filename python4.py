@@ -59,4 +59,4 @@ accaunt.paraYatir(600)
 # git remote add - uzak repo ekleme
 # git fetch - uzak repo dan veriyi getirme
 # git push origin master - sunucuya gönder
-# main branch kontrol
+# github kontrol
