@@ -1,5 +1,9 @@
-# Baslik
+# Başlık
 
 ## Bilgiler
 
-### deneme
+### açıklama
+
+- tre veya ulduz ile ayırma
+- enter basılmadıgı sürece devam eder (3x)
+
