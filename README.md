@@ -11,4 +11,4 @@
 
 [Link ekle örnek insta] (https://www.instagram.com/nmkasumov22/)
 
-! [resim] (https://picsum.photos/200/300)
+! [resim] (https://fastly.picsum.photos/id/947/200/300.jpg?hmac=xWi3fTvb1sKlC9ahIla_xr0F3Bjq9UIpXx19e7EMG4o)
