@@ -49,3 +49,4 @@ accaunt.paraYatir(600)
 # git clone - projeyi klonlama
 # git chekout - branch geçişi
 # git rm - dosyayı silme (takip edilenlerden)
+# deneme2
