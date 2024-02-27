@@ -48,4 +48,4 @@ accaunt.paraYatir(600)
 # git pull - sunucudan alma
 # git clone - projeyi klonlama
 # git chekout - branch geçişi
-# git rm - dosyayı silme
+# git rm - dosyayı silme (takip edilenlerden)
