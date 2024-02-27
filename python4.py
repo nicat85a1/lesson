@@ -42,6 +42,7 @@ accaunt.paraYatir(600)
 
 # git init -  bir projeyi git ile yönetmeye başlama
 # git add -  dosyayı staging area'ya ekleme
+# git add . - tüm değişiklikleri staging area'ya ekleme
 # git commit - snapshot alma
 # git status -  değişenleri gösterme
 # git push - sunucuya gönderme
