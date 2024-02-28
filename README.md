@@ -11,6 +11,4 @@
 
 [Link ekle örnek insta] (https://www.instagram.com/nmkasumov22/)
 
-![resim] (https://github.com/nicat85a1/lesson/blob/main/resim.png)
-
-![Alt text](https://github.com/nicat85a1/lesson/blob/main/resim.png "a title")
+![resim](https://github.com/nicat85a1/lesson/blob/main/resim.png "resim")
