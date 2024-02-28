@@ -30,7 +30,7 @@ print(3*4) # *
 print(4/2) # /
 print(10%3) # qalıq mod işlemi
 print(4**2) # kuvvet
-print(10//2.7) # // Tamsayı bölme / tam sayıdan sonrasını atar
+print(10//2.7) # // Tamsayı bölme / tam sayıdan sonrasını atar (# round fonksyonu ile yaklaştırma)
 print(5>4) # > Büyük mü?
 print(5<4) # < Küçük mü?
 print(5==4) # == Eşittir mi?
