@@ -59,4 +59,22 @@ accaunt.paraYatir(600)
 # git remote add - uzak repo ekleme
 # git fetch - uzak repo dan veriyi getirme
 # git push origin master - sunucuya gönder
-# resim kontrol
+# pwd - şu anki dizinin tam adresini verir
+# ls - dosyaları listeler
+# cd - dizin değiştirme
+# mkdir - yeni klasör oluşturulması
+# touch - yeni dosya oluşturulması
+# cat > filename <<EOF - dosyanın içeriğini belirtme
+# nano filename - dosyaya giriş yapabilmem için kullanılan editör
+# vi/vim/emacs - text editor açılır
+# ctrl+o - kaydetme
+# ctrl+x - çıkış
+# clear - terminali temizleme
+# whoami - kullanıcı adını verir
+# kill - pid numarası ile processi sonlandırma
+# man command - komut hakkında bilgi verir
+# whatis command -  komutun ne işe yaradığını söyləyir
+# apt-get install - linux da paket yüklemesi
+# apt update - yeni versiyon var mı kontrol et
+# apt upgrade - yükseltmə
+# sudo su - root yetkilisi alma
