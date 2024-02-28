@@ -44,12 +44,12 @@ accaunt.paraYatir(600)
 # git add -  dosyayı staging area'ya ekleme
 # git add . - tüm değişiklikleri staging area'ya ekleme
 # git commit - snapshot alma
-# git status -  değişenleri gösterme
+# git status -  değişenleri gösterme / rehber
 # git push - sunucuya gönderme
 # git pull - sunucudan alma
 # git clone - projeyi klonlama
-# git chekout - branch geçişi / dal
-# git rm - dosyayı silme (takip edilenlerden)
+# git checkout - branch geçişi / dal / git checkout commithash -- . (geri yükleme)
+# git rm - dosyayı silme (takip edilenlerden) / git rm -r (takip etmeden)
 # yeni bir branch açmak için : git checkout -b newbranch
 # git log - tüm geçmişi görme
 # git diff - farkları görme
@@ -78,3 +78,4 @@ accaunt.paraYatir(600)
 # apt update - yeni versiyon var mı kontrol et
 # apt upgrade - yükseltmə
 # sudo su - root yetkilisi alma
+# git mv - dosya veya dizin ismini değiştirme ve ya taşıma (dosya1.txt dosya2.txt)(dosya1.txt dosyalar/)
