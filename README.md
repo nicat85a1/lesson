@@ -17,7 +17,7 @@
 `dpkg -i <gcm-linux_amd64.2.4.1.deb>`
 `git-credential-manager configure`
 
-`git config --global credential.credentialStore secretservice` ### or `git config --global credential.credentialStore gpg`
+`git config --global credential.credentialStore secretservice` #or# `git config --global credential.credentialStore gpg`
 
 `gpg --gen-key`
 
