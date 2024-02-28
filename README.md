@@ -2,6 +2,14 @@
 
 ## option 1:
 
+[get_browser] (https://github.com/settings/tokens/new)
+
+## Expiration 1 Year
+
+## Select scopes All
+
+## Generate token
+
 `git remote set-url origin https://TOKEN@github.com/username/repositories`
 
 `git push origin main`
