@@ -1,28 +1,44 @@
-# Başlık
+# fatal: Authentication failed
 
-## Bilgiler
+## option 1:
 
-### açıklama
+`git remote set-url origin https://TOKEN@github.com/username/repositories`
 
--------
+`git push origin main`
 
-- tre veya ulduz ile ayırma
-- enter basılmadıgı sürece devam eder (3x)
+## or option 2:
 
-*italic* **bold** ***bolditalic***
+### download:
 
-> Blok
+[gcm_linux_download_link] (https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.4.1/gcm-linux_amd64.2.4.1.deb)
 
-`satır içi kod` geritırnak içinde
+### open project on terminal:
+### root yetkisi: `sudo su`
+`dpkg -i <gcm-linux_amd64.2.4.1.deb>`
+`git-credential-manager configure`
 
-```
-# kod bloğu
-yazdır '3 geritırnak ve ya'
-yazdır '4 boşluk girintili'
-```
+`git config --global credential.credentialStore secretservice` 
 
--------
+### or 
 
-[Link ekle örnek insta] (https://www.instagram.com/nmkasumov22/)
+`git config --global credential.credentialStore gpg`
 
-![resim](https://external-preview.redd.it/VS12PCansbl4qLGc8G7bExfuBibP0AJLSh7DTR-TLog.jpg?width=1080&crop=smart&auto=webp&s=e940083de52641be6e4e9b76f4d199548d93bede "resim")
+`gpg --gen-key`
+
+`git config --global credential.credentialStore plaintext`
+
+### done.
+
+-----------------------------------------------------------
+
+open project on terminal
+
+`sudo su`
+
+`git add .`
+
+`git status`
+
+`git commit -m "fatal password control"`
+
+`git push -u origin main`
