@@ -35,9 +35,7 @@
 
 -----------------------------------------------------------
 
-open project on terminal
-
-`sudo su`
+## clear
 
 `git add .`
 
