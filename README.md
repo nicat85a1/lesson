@@ -11,6 +11,16 @@
 
 *italic* **bold** ***bolditalic***
 
+> Blok
+
+`satır içi kod` geritırnak içinde
+
+```
+# kod bloğu
+yazdır '3 geritırnak ve ya'
+yazdır '4 boşluk girintili'
+```
+
 -------
 
 [Link ekle örnek insta] (https://www.instagram.com/nmkasumov22/)
