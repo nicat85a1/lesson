@@ -61,7 +61,7 @@ accaunt.paraYatir(600)
 # git push origin master - sunucuya gönder
 # pwd - şu anki dizinin tam adresini verir
 # ls - dosyaları listeler
-# cd - dizin değiştirme
+# cd - dizin değiştirme / cd .. - üst dizine geçme
 # mkdir - yeni klasör oluşturulması
 # touch - yeni dosya oluşturulması
 # cat > filename <<EOF - dosyanın içeriğini belirtme
@@ -69,7 +69,7 @@ accaunt.paraYatir(600)
 # vi/vim/emacs - text editor açılır
 # ctrl+o - kaydetme
 # ctrl+x - çıkış
-# clear - terminali temizleme
+# clear - terminali temizleme / ctrl L
 # whoami - kullanıcı adını verir
 # kill - pid numarası ile processi sonlandırma
 # man command - komut hakkında bilgi verir
