@@ -21,29 +21,30 @@ print(x)
 # task 3
 b = ["python","php","java"]
 print(b)
-daxil = input("ad daxil edin:")
-if daxil == "":
-    print("ad daxil edilmedi")
-elif len(daxil) > 15:
-    print("ad 15 simvoldan cox ola bilmez")
-    sil = input("ad silin:")
-else: 
-    pass
-
-if sil == "":
-    print("ad daxil edilmedi:")
-elif len(sil) > 15:
-    print("ad 15 simvoldan cox ola bilmez")
 
 islemler = input("işlemi seç(1/2): ")
 if islemler in ('1', '2'):
     if islemler == '1':
+        daxil = input("ad daxil edin:")
+        if daxil == "":
+            print("ad daxil edilmedi")
+        elif len(daxil) > 15:
+            print("ad 15 simvoldan cox ola bilmez")
+        else: 
+            pass
         b.append(daxil)
         print(b)
     elif islemler == '2':
+        sil = input("ad silin:")
+        if sil == "":
+            print("ad daxil edilmedi")
+        elif len(sil) > 15:
+            print("ad 15 simvoldan cox ola bilmez")
+        else: 
+            pass
         b.remove(sil)
         print(b)
-print(b)       
+
 """
 # task 4
 c = ["python","java","django","Aphp"]
