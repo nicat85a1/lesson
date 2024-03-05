@@ -10,7 +10,7 @@ print(liste) # finiş
 file.close()
 """
 
-"""
+
 # yöntem 2 ( sort -> sorted )
 
 listx = set() # set oluşturdum
@@ -23,7 +23,7 @@ sorted_listx = sorted(listx) #sorted ile set'i sıralı bir listeye dönüştür
 print(sorted_listx) # finiş
 
 # çıktı
-
+"""
 """
 ['AWS Cloud 9', 'Android Studio', 'Aptana Studio', 'Aptana Studio 3', 'Asana', 'Atom', 'AutoHotkey', 'Bluefish', 'Brackets', 'Coda', 'CodeStream', 
 'CoffeeCup HTML Editor', 'DeskTime', 'Eclipse', 'Emacs', 'GNU Emacs', 'Geany', 'Gedit', 'GitHub Copilot', 'InteliJ IDEA', 'IntelliJ IDEA', 'Jam', 
@@ -34,7 +34,7 @@ print(sorted_listx) # finiş
 
 """
 
-# sorunlu çıktılar
+# sorunlu çıktılar 'vs code' ile \u200b aratilarak txt dosyasından kaldırılabilir. /Düzenle/Bul/Alt+R/ '\u200b'
 
 # 'Brackets\u200b'
 # 'Notepad++\u200b'

@@ -80,9 +80,9 @@ Eclipse
 InteliJ IDEA
 Xcode
 
-Brackets​
-Sublime Text​
-Notepad++​
+Brackets
+Sublime Text
+Notepad++
 Visual Studio Code
 
 UltraEdit
