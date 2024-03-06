@@ -81,41 +81,23 @@ while i < 10 :
 # task 9
 
 # task 10
-a = {'a':['Fuad','Ali','Orxan']}
+a = {'a': ['Fuad', 'Ali', 'Orxan']}
 secim = input("(1) Elave et (2) Sil:")
 if secim == "1":
     ad = input("Ad:")
     if ad == "":
         print("Ad bos ola bilmez")
-    elif ad in a["ad"]:
-        print("Bu ad artiq movcuddur")
+    elif ad in a["a"]:
+        print("Bu ad artiq movcuddur",a)
     else:
-        a["ad"].append(ad)
-        print("Ad elave olundu")
+        a["a"].append(ad)
+        print("Ad elave olundu",a)
 elif secim == "2":
     ad = input("Ad:")
     if ad == "":
         print("Ad bos ola bilmez")
-    elif ad in a["ad"]:
-        print("Bu ad movcuddur")
+    elif ad not in a["a"]:
+        print("Bu ad movcud deyil",a)
     else:
-        a["ad"].remove(ad)
-        print("Ad silindi")
-elif secim == "2":
-    ad = input("Ad:")
-    if ad == "":
-        print("Ad bos ola bilmez")
-    elif ad in a["ad"]:
-        print("Bu ad artiq movcuddur")
-    else:
-        a["ad"].remove(ad)
-        print("Ad elave olundu")
-elif secim == "2":
-    ad = input("Ad:")
-    if ad == "":
-        print("Ad bos ola bilmez")
-    elif ad in a["ad"]:
-        print("Bu ad movcuddur")
-    else:
-        a["ad"].append(ad)
-        print("Ad silindi")
+        a["a"].remove(ad)
+        print("Ad silindi",a)
