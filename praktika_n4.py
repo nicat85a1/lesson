@@ -17,15 +17,14 @@ print(hasil)
 listsira = [2,4,5,9]
 listsira.reverse()
 print(listsira)
-"""
-"""
+
 # task 3 +
+
 list1 = ["sa","sa","sa"]
 list2 = ["lam","lam","lam"]
 listzip = zip(list1,list2)
 bosluk = tuple((a + b,) for a, b in listzip)
 print(bosluk)
-"""
 
 # task 4 +
 
@@ -33,24 +32,21 @@ a = [5,7,["aplle","gilas","heyva"]]
 a[2][2]="gül"
 print(a)
 
-
-"""
 # task 5 +
 
 listindexx = [1,2,3,4,5]
 listindexx[2]=2
 print(listindexx)
 
-# tas 6
+# tas 6 +
 
 listorta = [1,2,3,4,5,6,7,8,9,10]
 toplam=0
 for sayi in listorta:
    toplam+=sayi
 print(toplam/len(listorta))
-"""
-"""
-# task 7
+
+# task 7 +
 
 reqem1 = int(input("reqem1: "))
 reqem2 = int(input("reqem2: "))
@@ -68,18 +64,22 @@ print(f"Cüt: {cüt}")
 print(f"Tək: {tək}")
 print(f"Cüt rəqəmlərin sayı: {len(cüt)}")
 
-"""
-"""
 # task 8 +
 
 listtekrar = [1,2,2,4,4,6,6,8,8,10]
 print(set(listtekrar))
 
+# task 11 +
+
+i = 0
+
+while i < 10 :
+    print("i",i) # döngüler
+    i = i + 2 # i+=2 # i*=2 ve s. da kullanabilirsin
 """
+
 # task 9
 
-
-"""
 # task 10
 a = {'a':['Fuad','Ali','Orxan']}
 secim = input("(1) Elave et (2) Sil:")
@@ -119,14 +119,3 @@ elif secim == "2":
     else:
         a["ad"].append(ad)
         print("Ad silindi")
-"""
-
-"""
-# task 11
-
-i = 0
-
-while i < 10 :
-    print("i",i) # döngüler
-    i = i + 2 # i+=2 # i*=2 ve s. da kullanabilirsin
-"""
