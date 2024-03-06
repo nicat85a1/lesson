@@ -78,14 +78,6 @@ print(set(listtekrar))
 """
 # task 9
 
-import itertools
-
-reqemler = [1, 2, 3]
-
-kombinasiyalar = list(itertools.permutations(reqemler))
-for komb in kombinasiyalar:
-    print(komb)
-
 
 """
 # task 10
