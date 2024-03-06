@@ -64,3 +64,13 @@ test_list1 = (3,4)
 test_list += test_list1
 print(test_list)
 """
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+thisdict["years"] = thisdict.pop("year")
+
+print(thisdict)
