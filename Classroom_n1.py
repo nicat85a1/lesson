@@ -145,7 +145,7 @@ for Telefon in Telefonlar:  # alt alta yazmaq üçün listden çıxardım.
     
 total_value = 0 # ümumi deyer
 
-for i in range(3): # i'ni behane ederek döngü yaradırıq
+for i in range(3):
     count = int(input("Səhmin sayını daxil edin: "))
     price = float(input("Səhmin qiymətini daxil edin: "))
     total_value += count * price # deyeri hesablayıb ümumi deyere elave edirem
