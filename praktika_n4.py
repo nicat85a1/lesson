@@ -78,8 +78,7 @@ while i < 10 :
     i = i + 2 # i+=2 # i*=2 ve s. da kullanabilirsin
 """
 
-# task 9
-
+"""
 # task 10
 a = {'a': ['Fuad', 'Ali', 'Orxan']}
 secim = input("(1) Elave et (2) Sil:")
@@ -101,3 +100,82 @@ elif secim == "2":
     else:
         a["a"].remove(ad)
         print("Ad silindi",a)
+"""
+# task 9
+"""
+rakamlar = [1, 2, 3]
+
+# Kombinasyon bulmak için bir fonksiyon
+def kombinasyon_bul(rakamlar):
+    for i in range(len(rakamlar)):
+        for j in range(i+1, len(rakamlar)):
+            for k in range(j+1, len(rakamlar)):
+                print(rakamlar[i], rakamlar[j], rakamlar[k])
+
+kombinasyon_bul(rakamlar)
+
+###
+
+rakamlar = [1, 2, 3]
+
+# permütasyon bulmak için bir fonksiyon
+def permütasyon_bul(rakamlar):
+    for i in rakamlar:
+        for j in rakamlar:
+            for k in rakamlar:
+                if i != j and j != k and i != k:
+                    print(i, j, k)
+print(permütasyon_bul(rakamlar))
+
+###
+
+rakamlar = [1, 2, 3]   # 3^3
+
+# Tekrarlı permütasyon bulmak için bir fonksiyon
+def tekrarli_permütasyon_bul(rakamlar):
+    for i in rakamlar:
+        for j in rakamlar:
+            for k in rakamlar:
+                print(i, j, k)
+
+tekrarli_permütasyon_bul(rakamlar)
+"""
+"""
+rakamlar = [1, 2, 3]
+
+# permütasyon bulmak için bir fonksiyon
+def permütasyon_bul(rakamlar):
+    for i in rakamlar:
+        for j in rakamlar:
+            for k in rakamlar:
+                if i != j and j != k and i != k:
+                    print(i, j, k)
+print(permütasyon_bul(rakamlar))
+
+"""
+"""
+def permutations(iterable, r=None):
+    pool = tuple(iterable)
+    n = len(pool)
+    r = n if r is None else r
+    if r > n:
+        return
+    indices = list(range(n))
+    cycles = list(range(n, n-r, -1))
+    yield tuple(pool[i] for i in indices[:r])
+    while n:
+        for i in reversed(range(r)):
+            cycles[i] -= 1
+            if cycles[i] == 0:
+                indices[i:] = indices[i+1:] + indices[i:i+1]
+                cycles[i] = n - i
+            else:
+                j = cycles[i]
+                indices[i], indices[-j] = indices[-j], indices[i]
+                yield tuple(pool[i] for i in indices[:r])
+                break
+        else:
+            return
+for p in permutations('123', 3):
+    print(p)
+"""
