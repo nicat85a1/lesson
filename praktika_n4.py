@@ -141,19 +141,6 @@ def tekrarli_permütasyon_bul(rakamlar):
 tekrarli_permütasyon_bul(rakamlar)
 """
 """
-rakamlar = [1, 2, 3]
-
-# permütasyon bulmak için bir fonksiyon
-def permütasyon_bul(rakamlar):
-    for i in rakamlar:
-        for j in rakamlar:
-            for k in rakamlar:
-                if i != j and j != k and i != k:
-                    print(i, j, k)
-print(permütasyon_bul(rakamlar))
-
-"""
-"""
 def permutations(iterable, r=None):
     pool = tuple(iterable)
     n = len(pool)
@@ -178,8 +165,9 @@ def permutations(iterable, r=None):
             return
 for p in permutations('123', 3):
     print(p)
-
-    def repeated_permutations(iterable, r=None):
+"""
+"""
+def repeated_permutations(iterable, r=None):
     pool = tuple(iterable)
     n = len(pool)
     r = n if r is None else r
@@ -199,11 +187,38 @@ for p in permutations('123', 3):
 # Örnek kullanım:
 for p in repeated_permutations('123', 4):
     print(p)
+    """
+"""
+def combinations(iterable, r):
+    pool = tuple(iterable)
+    n = len(pool)
+    if r > n:
+        return
+    indices = list(range(r))
+    yield tuple(pool[i] for i in indices)
+    
+    while True:
+        for i in reversed(range(r)):
+            if indices[i] != i + n - r:
+                break
+        else:
+            return
+        indices[i] += 1
+        for j in range(i+1, r):
+            indices[j] = indices[j-1] + 1
+        yield tuple(pool[i] for i in indices)
+
+# Örnek kullanım:
+for c in combinations('12345', 4): # 2# reqem özünden sonra gelen reqemlerin sayı qeder 3# 2#+2 4# = 2#
+    print(c)
+"""
+"""
 """
 
 # rakamlar = [1, 2, 3]
 
 # permutasyonda sırada reqem diger reqemlerin sayı qeder ola biler
 # tekrarlı permutasyonda sırada reqem # 2li üçün reqemin sayı qeder 3lü üçün r.sayı^2 qeder 4lü üçün r.sayı^3
+# 2# reqem özünden sonra gelen reqemlerin sayı qeder 3# 2#+2 4# = 2#
 
 # rakamlar[0] = 1
