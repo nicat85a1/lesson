@@ -1,10 +1,10 @@
-"""
+
 ### Pərakəndə:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
 mehsullar = []
 
-for i in range(6):
+for i in range(2):
     mehsul = {}  # "Dictionaries" yaradıram
     mehsul["Adı"] = input("Məhsulun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
     mehsul["Qiymeti"] = float(input("Məhsulun qiymətini daxil edin: "))
@@ -12,7 +12,7 @@ for i in range(6):
 
 for mehsul in mehsullar:  # alt alta yazmaq üçün listden çıxardım.
     print("Mehsulun adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**mehsul))
-
+"""
 ### Səhiyyə:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
@@ -140,7 +140,8 @@ for i in range(6):
 for Telefon in Telefonlar:  # alt alta yazmaq üçün listden çıxardım.
     print("Telefonların adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**Telefon))
 
-
+"""
+"""
 ### Maliyyə:
     
 total_value = 0 # ümumi deyer

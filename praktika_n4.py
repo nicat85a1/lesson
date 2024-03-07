@@ -178,4 +178,32 @@ def permutations(iterable, r=None):
             return
 for p in permutations('123', 3):
     print(p)
+
+    def repeated_permutations(iterable, r=None):
+    pool = tuple(iterable)
+    n = len(pool)
+    r = n if r is None else r
+    indices = [0] * r
+    yield tuple(pool[i] for i in indices)
+    
+    while True:
+        for i in reversed(range(r)):
+            if indices[i] < n - 1:
+                indices[i] += 1
+                yield tuple(pool[i] for i in indices)
+                break
+            indices[i] = 0
+        else:
+            return
+
+# Örnek kullanım:
+for p in repeated_permutations('123', 4):
+    print(p)
 """
+
+# rakamlar = [1, 2, 3]
+
+# permutasyonda sırada reqem diger reqemlerin sayı qeder ola biler
+# tekrarlı permutasyonda sırada reqem # 2li üçün reqemin sayı qeder 3lü üçün r.sayı^2 qeder 4lü üçün r.sayı^3
+
+# rakamlar[0] = 1
