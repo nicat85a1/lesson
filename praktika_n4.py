@@ -102,44 +102,6 @@ elif secim == "2":
         print("Ad silindi",a)
 """
 # task 9
-"""
-rakamlar = [1, 2, 3]
-
-# Kombinasyon bulmak için bir fonksiyon
-def kombinasyon_bul(rakamlar):
-    for i in range(len(rakamlar)):
-        for j in range(i+1, len(rakamlar)):
-            for k in range(j+1, len(rakamlar)):
-                print(rakamlar[i], rakamlar[j], rakamlar[k])
-
-kombinasyon_bul(rakamlar)
-
-###
-
-rakamlar = [1, 2, 3]
-
-# permütasyon bulmak için bir fonksiyon
-def permütasyon_bul(rakamlar):
-    for i in rakamlar:
-        for j in rakamlar:
-            for k in rakamlar:
-                if i != j and j != k and i != k:
-                    print(i, j, k)
-print(permütasyon_bul(rakamlar))
-
-###
-
-rakamlar = [1, 2, 3]   # 3^3
-
-# Tekrarlı permütasyon bulmak için bir fonksiyon
-def tekrarli_permütasyon_bul(rakamlar):
-    for i in rakamlar:
-        for j in rakamlar:
-            for k in rakamlar:
-                print(i, j, k)
-
-tekrarli_permütasyon_bul(rakamlar)
-"""
 
 # backtracking
 
