@@ -43,5 +43,15 @@ else:
 
 # task 1
 
-reqem1 = int(input("1. reqemi daxil edin: "))
-reqem2 = int(input("2. reqemi daxil edin: "))
+reqem1 = int(input("Birinci ededi daxil edin: "))
+reqem2 = int(input("Ikinci ededi daxil edin: "))
+if (10 <= reqem1 <= 20 and reqem1 % 2 == 0) or (10 <= reqem2 <= 20 and reqem2 % 2 == 0):
+    print("True")
+else:
+    print("False")
+
+cüt = 0
+for i in range(10, 20+1):
+    if i % 2 == 0:
+        cüt = cüt + 1
+print("10 ilə 20 arasında", cüt, "cüt ədəd var.")
