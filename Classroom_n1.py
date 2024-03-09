@@ -1,147 +1,145 @@
-
+"""
 ### Pərakəndə:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-mehsullar = []
+products = []
 
 for i in range(2):
-    mehsul = {}  # "Dictionaries" yaradıram
-    mehsul["Adı"] = input("Məhsulun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    mehsul["Qiymeti"] = float(input("Məhsulun qiymətini daxil edin: "))
-    mehsullar.append(mehsul)  # elave edirem
+    product = {}  # "Dictionaries" yaradıram
+    product["name"] = input("Məhsulun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    product["price"] = float(input("Məhsulun qiymətini daxil edin: "))
+    products.append(product)  # elave edirem
 
-for mehsul in mehsullar:  # alt alta yazmaq üçün listden çıxardım.
-    print("Mehsulun adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**mehsul))
-"""
+for product in products:  # alt alta yazmaq üçün listden çıxardım.
+    print("product name: {name} - price: {price} AZN".format(**product))
+
 ### Səhiyyə:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-xesteler = []
+patients = []
 
 for i in range(5):
-    xeste = {}  # "Dictionaries" yaradıram
-    xeste["Adı"] = input("Xestenin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    xeste["Yaşı"] = int(input("Xestenin yaşını daxil edin: "))
-    xesteler.append(xeste)  # elave edirem
+    patient = {}  # "Dictionaries" yaradıram
+    patient["name"] = input("Xestenin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    patient["age"] = int(input("Xestenin yaşını daxil edin: "))
+    patients.append(patient)  # elave edirem
 
-for xeste in xesteler:  # alt alta yazmaq üçün listden çıxardım.
-    print("Xestenin adı: {Adı} - Yaşı: {Yaşı}".format(**xeste))
+for patient in patients:  # alt alta yazmaq üçün listden çıxardım.
+    print("Patient name: {name} - age: {age}".format(**patient))
 
 ### Təhsil:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Telebeler = []
+students = []
 
 for i in range(8):
-    telebe = {}  # "Dictionaries" yaradıram
-    telebe["Adı"] = input("Telebenin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    telebe["Yaşı"] = int(input("Telebenin yaşını daxil edin: "))
-    Telebeler.append(telebe)  # elave edirem
+    student = {}  # "Dictionaries" yaradıram
+    student["name"] = input("Telebenin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    student["age"] = int(input("Telebenin yaşını daxil edin: "))
+    students.append(student)  # elave edirem
 
-for telebe in Telebeler:  # alt alta yazmaq üçün listden çıxardım.
-    print("Telebenin adı: {Adı} - Yaşı: {Yaşı}".format(**telebe))
+for student in students:  # alt alta yazmaq üçün listden çıxardım.
+    print("Student name: {name} - age: {age}".format(**student))
 
 ### Restoran:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Qidalar = []
+Foods = []
 
 for i in range(4):
-    qida = {}  # "Dictionaries" yaradıram
-    qida["Adı"] = input("Qidanın adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    qida["Qiymeti"] = float(input("Qidanın qiymətini daxil edin: "))
-    Qidalar.append(qida)  # elave edirem
+    food = {}  # "Dictionaries" yaradıram
+    food["name"] = input("Qidanın adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    food["price"] = float(input("Qidanın qiymətini daxil edin: "))
+    Foods.append(food)  # elave edirem
 
-for qida in Qidalar:  # alt alta yazmaq üçün listden çıxardım.
-    print("Qidanın adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**qida))
+for food in Foods:  # alt alta yazmaq üçün listden çıxardım.
+    print("Food name: {name} - price: {price} AZN".format(**food))
 
 ### Texnologiya:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-developers = []
+dHouseelopers = []
 
 for i in range(4):
-    developer = {}  # "Dictionaries" yaradıram
-    developer["Adı"] = input("Tertibatçının adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    developer["Yaşı"] = int(input("Tertibatçının yaşını daxil edin: "))
-    developer["P.dili"] = input("Tertibatçının proqramlaşdırma diliyini daxil edin: ")
-    developers.append(developer)  # elave edirem
+    dHouseeloper = {}  # "Dictionaries" yaradıram
+    dHouseeloper["name"] = input("Tertibatçının adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    dHouseeloper["age"] = int(input("Tertibatçının yaşını daxil edin: "))
+    dHouseeloper["lang"] = input("Tertibatçının proqramlaşdırma diliyini daxil edin: ")
+    dHouseelopers.append(dHouseeloper)  # elave edirem
 
-for developer in developers:  # alt alta yazmaq üçün listden çıxardım.
-    print("Tertibatçının adı: {Adı} - Yaşı: {Yaşı}, Proqramlaşdırma Dili: {P.dili}".format(**developer))
+for dHouseeloper in dHouseelopers:  # alt alta yazmaq üçün listden çıxardım.
+    print("DHouseeloper name: {name} - age: {age}, lang: {lang}".format(**dHouseeloper))
 
 ### Əyləncə:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Filmler = []
+movies = []
 
 for i in range(4):
-    film = {}  # "Dictionaries" yaradıram
-    film["Adı"] = input("Filmin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    film["İstehsal tarixi"] = int(input("Filmin istehsal tarixini daxil edin: "))
-    Filmler.append(film)  # elave edirem
+    movie = {}  # "Dictionaries" yaradıram
+    movie["name"] = input("Filmin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    movie["date_of"] = int(input("Filmin istehsal tarixini daxil edin: "))
+    movies.append(movie)  # elave edirem
 
-for film in Filmler:  # alt alta yazmaq üçün listden çıxardım.
-    print("Filmin adı: {Adı} - İstehsal tarixi: {İstehsal tarixi}".format(**film))
+for movie in movies:  # alt alta yazmaq üçün listden çıxardım.
+    print("Movie name: {name} - date_of: {date_of}".format(**movie))
 
 ### Daşınmaz Əmlak:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Evler = []
+Houses = []
 
 for i in range(4):
-    ev = {}  # "Dictionaries" yaradıram
-    ev["Sahesi"] = input("Evin sahesini daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    ev["Qiymeti"] = float(input("Evin Qiymetini daxil edin: "))
-    Evler.append(ev)  # elave edirem
+    House = {}  # "Dictionaries" yaradıram
+    House["area"] = input("Evin sahesini daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    House["price"] = float(input("Evin priceni daxil edin: "))
+    Houses.append(House)  # elave edirem
 
-for ev in Evler:  # alt alta yazmaq üçün listden çıxardım.
-    print("Evin sahesi: {Sahesi} m² - Evin Qiymeti: {Qiymeti} Azn".format(**ev))
+for House in Houses:  # alt alta yazmaq üçün listden çıxardım.
+    print("House area: {area} m² - House price: {price} Azn".format(**House))
 
 ### Elektron ticarət:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-mehsullar = []
+products = []
 
 for i in range(7):
-    mehsul = {}  # "Dictionaries" yaradıram
-    mehsul["Adı"] = input("Məhsulun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    mehsul["Qiymeti"] = float(input("Məhsulun qiymətini daxil edin: "))
-    mehsullar.append(mehsul)  # elave edirem
+    product = {}  # "Dictionaries" yaradıram
+    product["name"] = input("Məhsulun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    product["price"] = float(input("Məhsulun qiymətini daxil edin: "))
+    products.append(product)  # elave edirem
 
-for mehsul in mehsullar:  # alt alta yazmaq üçün listden çıxardım.
-    print("Mehsulun adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**mehsul))
+for product in products:  # alt alta yazmaq üçün listden çıxardım.
+    print("product name: {name} - price: {price} AZN".format(**product))
 
 ### Kənd Təsərrüfatı:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Tərəvəzlər = []
+Vegetables = []
 
 for i in range(2):
-    Tərəvəz = {}  # "Dictionaries" yaradıram
-    Tərəvəz["Adı"] = input("Tərəvəzin adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    Tərəvəz["Qiymeti"] = float(input("Tərəvəzin qiymətini daxil edin: "))
-    Tərəvəzlər.append(Tərəvəz)  # elave edirem
+    Vegetable = {}  # "Dictionaries" yaradıram
+    Vegetable["name"] = input("Vegetablein adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    Vegetable["price"] = float(input("Vegetablein qiymətini daxil edin: "))
+    Vegetables.append(Vegetable)  # elave edirem
 
-for Tərəvəz in Tərəvəzlər:  # alt alta yazmaq üçün listden çıxardım.
-    print("Tərəvəzin adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**Tərəvəz))
+for Vegetable in Vegetables:  # alt alta yazmaq üçün listden çıxardım.
+    print("Vegetable name: {name} - price: {price} AZN".format(**Vegetable))
 
 ### Telekommunikasiya:
 
 # {} içerisinde eyni adlı key veremediğim için list oluşturdum
-Telefonlar = []
+Telephones = []
 
 for i in range(6):
-    Telefon = {}  # "Dictionaries" yaradıram
-    Telefon["Adı"] = input("Telefonun adını daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
-    Telefon["Qiymeti"] = float(input("Telefonun qiymətini daxil edin: "))
-    Telefonlar.append(Telefon)  # elave edirem
+    Telephone = {}  # "Dictionaries" yaradıram
+    Telephone["name"] = input("Telephone name daxil edin: ")  # key'lere value vermmek üçün input isteyirem.
+    Telephone["price"] = float(input("Telephone price daxil edin: "))
+    Telephones.append(Telephone)  # elave edirem
 
-for Telefon in Telefonlar:  # alt alta yazmaq üçün listden çıxardım.
-    print("Telefonların adı: {Adı} - Qiymeti: {Qiymeti} AZN".format(**Telefon))
+for Telephone in Telephones:  # alt alta yazmaq üçün listden çıxardım.
+    print("Telephone name: {name} - price: {price} AZN".format(**Telephone))
 
-"""
-"""
 ### Maliyyə:
     
 total_value = 0 # ümumi deyer
@@ -151,37 +149,35 @@ for i in range(3):
     price = float(input("Səhmin qiymətini daxil edin: "))
     total_value += count * price # deyeri hesablayıb ümumi deyere elave edirem
 
-print(f"Səhm portfelinin ümumi dəyəri: {total_value} AZN") # format ile yazdırıram
+print(f"The total value of the stock portfolio: {total_value} AZN") # format ile yazdırıram
 
 ### Nəqliyyat:
 
-mesafe = float(input("Qət olunmuş məsafəni kilometr cinsindən daxil edin: "))
-vaxtd = int(input("Alınan vaxtı deqiqe cinsindən daxil edin: "))
-vaxt = vaxtd / 60
-orta_suret = mesafe / vaxt
-print(f"Avtomobilin orta sürəti: {orta_suret} km/saat")
-"""
-"""
+distance = float(input("Qət olunmuş məsafəni kilometr cinsindən daxil edin: "))
+time_m = int(input("Alınan timeı deqiqe cinsindən daxil edin: "))
+time = time_m / 60
+average_speed = distance / time
+print(f"Avtomobilin orta sürəti: {average_speed} km/saat")
+
 ### Səyahət Sənayesi:
 
-aviabilet_qiymeti = float(input("Aviabiletin qiymətini daxil edin: "))
-otel_qiymeti = float(input("Otelin qiymətini daxil edin: "))
-avtomobil_icarəsi_qiymeti = float(input("Avtomobil icarəsinin qiymətini daxil edin: "))
+airfare_price = float(input("Aviabiletin qiymətini daxil edin: "))
+hotel_price = float(input("Otelin qiymətini daxil edin: "))
+car_rental_price = float(input("Avtomobil icarəsinin qiymətini daxil edin: "))
 
-# seyahet_muddeti = int(input("Səyahətin müddətini gün cinsindən daxil edin: "))   # optional
+# travel_duration = int(input("Səyahətin müddətini gün cinsindən daxil edin: "))   # optional
 
-umumi_deyer = aviabilet_qiymeti + (otel_qiymeti + avtomobil_icarəsi_qiymeti) # * seyahet_muddeti
-print(f"Səyahətin ümumi dəyəri: {umumi_deyer:.2f} AZN") # :.2f 2 ondalık basamaklı sayı
-"""
-"""
+total_cost = airfare_price + (hotel_price + car_rental_price) # * travel_duration
+print(f"Səyahətin ümumi dəyəri: {total_cost:.2f} AZN") # :.2f 2 ondalık basamaklı sayı
+
 ### Tikinti sənayesi:
 
-materiallar = ['taxta', 'sement', 'qum', 'dəmir']
-umumi_deyer = 0
+materials = ['taxta', 'sement', 'qum', 'dəmir']
+total_cost = 0
 
-for material in materiallar:
-    kemiyyet = float(input(f"{material.capitalize()} kəmiyyətini daxil edin: "))
-    qiymet = float(input(f"{material.capitalize()} qiymətini daxil edin: "))
-    umumi_deyer += kemiyyet * qiymet
-print(f"Tikinti layihəsi üçün lazım olan materialların ümumi dəyəri: {umumi_deyer:.2f} AZN")
+for material in materials:
+    quantity = float(input(f"{material.capitalize()} kəmiyyətini daxil edin: "))
+    price = float(input(f"{material.capitalize()} qiymətini daxil edin: "))
+    total_cost += quantity * price
+print(f"The total cost of materials needed for the construction project: {total_cost:.2f} AZN")
 """
