@@ -140,85 +140,20 @@ def tekrarli_permütasyon_bul(rakamlar):
 
 tekrarli_permütasyon_bul(rakamlar)
 """
-"""
-def permutations(iterable, r=None):
-    pool = tuple(iterable)
-    n = len(pool)
-    r = n if r is None else r
-    if r > n:
-        return
-    indices = list(range(n))
-    cycles = list(range(n, n-r, -1))
-    yield tuple(pool[i] for i in indices[:r])
-    while n:
-        for i in reversed(range(r)):
-            cycles[i] -= 1
-            if cycles[i] == 0:
-                indices[i:] = indices[i+1:] + indices[i:i+1]
-                cycles[i] = n - i
-            else:
-                j = cycles[i]
-                indices[i], indices[-j] = indices[-j], indices[i]
-                yield tuple(pool[i] for i in indices[:r])
-                break
-        else:
-            return
-for p in permutations('123', 3):
-    print(p)
-"""
-"""
-def repeated_permutations(iterable, r=None):
-    pool = tuple(iterable)
-    n = len(pool)
-    r = n if r is None else r
-    indices = [0] * r
-    yield tuple(pool[i] for i in indices)
-    
-    while True:
-        for i in reversed(range(r)):
-            if indices[i] < n - 1:
-                indices[i] += 1
-                yield tuple(pool[i] for i in indices)
-                break
-            indices[i] = 0
-        else:
-            return
 
-# Örnek kullanım:
-for p in repeated_permutations('123', 4):
-    print(p)
-    """
-"""
-def combinations(iterable, r):
-    pool = tuple(iterable)
-    n = len(pool)
-    if r > n:
-        return
-    indices = list(range(r))
-    yield tuple(pool[i] for i in indices)
-    
-    while True:
-        for i in reversed(range(r)):
-            if indices[i] != i + n - r:
-                break
-        else:
-            return
-        indices[i] += 1
-        for j in range(i+1, r):
-            indices[j] = indices[j-1] + 1
-        yield tuple(pool[i] for i in indices)
+# backtracking
 
-# Örnek kullanım:
-for c in combinations('12345', 4): # 2# reqem özünden sonra gelen reqemlerin sayı qeder 3# 2#+2 4# = 2#
-    print(c)
-"""
-"""
-"""
+def permutasyon_yazdir(liste, baslangic, son):
+    # liste: permutasyonlarını yazdırmak istediğimiz liste
+    # baslangic: permutasyonun başladığı indeks
+    # son: permutasyonun bittiği indeks
+    if baslangic == son: # permutasyon tamamlandıysa
+        print(liste) # liste yazdır
+    else:
+        for i in range(baslangic, son + 1): # her bir eleman için
+            liste[baslangic], liste[i] = liste[i], liste[baslangic] # elemanı başa getir
+            permutasyon_yazdir(liste, baslangic + 1, son) # geri kalan elemanların permutasyonlarını bul
+            liste[baslangic], liste[i] = liste[i], liste[baslangic] # elemanı eski yerine geri koy
 
-# rakamlar = [1, 2, 3]
-
-# permutasyonda sırada reqem diger reqemlerin sayı qeder ola biler
-# tekrarlı permutasyonda sırada reqem # 2li üçün reqemin sayı qeder 3lü üçün r.sayı^2 qeder 4lü üçün r.sayı^3
-# 2# reqem özünden sonra gelen reqemlerin sayı qeder 3# 2#+2 4# = 2#
-
-# rakamlar[0] = 1
+rakamlar = [1, 2, 3]
+permutasyon_yazdir(rakamlar, 0, len(rakamlar) - 1)
