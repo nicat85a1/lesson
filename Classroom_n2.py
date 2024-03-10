@@ -110,49 +110,16 @@ elif secim == "2":
 # task 9
 
 """
+"""
 # task 9, google search: permutation using backtracking python
-"""
 
-tekrarli_permutasyon = '123'
-uzunluk = len(tekrarli_permutasyon)
-for i in range(uzunluk**uzunluk):
-    p = ""
-    for d in range(uzunluk):
-        p += tekrarli_permutasyon[i // uzunluk**(uzunluk-d-1) % uzunluk] # aydın olmayan: i // uzunluk**(uzunluk-d-1) % uzunluk   düsturun qaynağı?
-    print(p)
+# kodları sildim.
+
+# düsturların mənbəyi(kaykağı) yoxdur, sıralamanın necə oluştuğu anlaşılmır.
+
+# backtracking / permutasyon / task 9, öz yazdığım
 """
-"""
-# bir indeksi alır, indeksin evvlinde ve sonrasında gelen diger indeksleri sonuna elave edir. aydın olmayan sıralama: 1 2 4 3.
-def per(l):
-    if len(l) == 1:
-        return [l]
-    return [[l[i]] + p for i in range(len(l))for p in per(l[:i] + l [i+1:])]
-print(per([1,2,3,4]))
-"""
-"""
-def permutasyon(liste, index=0):
-    if index == len(liste):
-        print(liste)
-        return 
-    for i in range(index, len(liste)):
-        liste[i], liste[index]  = liste[index], liste[i]
-        permutasyon(liste, index+1)
-        liste[i], liste[index]  = liste[index], liste[i]
-permutasyon(['1', '2', '3']) # aydın olmayan sıralama?
-"""
-"""
-def permutasyon(liste, baslangic, son):
-    if baslangic == son:   # Recursion
-        print(liste)
-    else:
-        for i in range(baslangic, son + 1):
-            liste[baslangic], liste[i] = liste[i], liste[baslangic]
-            permutasyon(liste, baslangic + 1, son)
-            liste[baslangic], liste[i] = liste[i], liste[baslangic]
-rakamlar = [1, 2, 3]
-permutasyon(rakamlar, 0, len(rakamlar) - 1) # liste=rakamlar, baslangic=0 index, son=3-1 index # aydın olmayan sıralama?
-"""
-# backtracking / task 9, öz yazdığım
+# adım 1
 """
 rakamlar = [1, 2, 3]
 print(rakamlar)
@@ -167,6 +134,7 @@ print(rakamlar)
 rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
 print(rakamlar)
 """
+# adım 2
 """
 rakamlar = [1, 2, 3]
 print(rakamlar)
@@ -178,3 +146,14 @@ for i in range(3):
     rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
     print(rakamlar)
 """
+"""
+combination = [1, 2, 3]
+print(combination) # :p
+"""
+
+# Nested Loops / for loops w3schools / tekrarlı permutasyon
+rakamlar = [1, 2, 3]
+for saygac1 in rakamlar:
+    for saygac2 in rakamlar:
+        for saygac3 in rakamlar:
+            print([saygac1, saygac2, saygac3])
