@@ -74,18 +74,16 @@ print(set(listtekrar))
 i = 0
 
 while i < 10 :
-    print("i",i) # döngüler
-    i = i + 2 # i+=2 # i*=2 ve s. da kullanabilirsin
-"""
-"""
+    print("i",i)
+    i = i + 2
+
 # task 12 +
 say = 6
 sıra = 0
 for i in range(say):
   sıra += 1
   print(sıra,"Java")
-  """
-"""
+
 # task 10
 a = {'a': ['Fuad', 'Ali', 'Orxan']}
 secim = input("(1) Elave et (2) Sil:")
@@ -111,31 +109,72 @@ elif secim == "2":
 """
 # task 9
 
-# backtracking
+"""
+# task 9, google search: permutation using backtracking python
+"""
 
-def permutasyon_yazdir(liste, baslangic, son):
-    # liste: permutasyonlarını yazdırmak istediğimiz liste
-    # baslangic: permutasyonun başladığı indeks
-    # son: permutasyonun bittiği indeks
-    if baslangic == son: # permutasyon tamamlandıysa
-        print(liste) # liste yazdır
-    else:
-        for i in range(baslangic, son + 1): # her bir eleman için
-            liste[baslangic], liste[i] = liste[i], liste[baslangic] # elemanı başa getir
-            permutasyon_yazdir(liste, baslangic + 1, son) # geri kalan elemanların permutasyonlarını bul
-            liste[baslangic], liste[i] = liste[i], liste[baslangic] # elemanı eski yerine geri koy
-
-rakamlar = [1, 2, 3]
-permutasyon_yazdir(rakamlar, 0, len(rakamlar) - 1)
+tekrarli_permutasyon = '123'
+uzunluk = len(tekrarli_permutasyon)
+for i in range(uzunluk**uzunluk):
+    p = ""
+    for d in range(uzunluk):
+        p += tekrarli_permutasyon[i // uzunluk**(uzunluk-d-1) % uzunluk] # aydın olmayan: i // uzunluk**(uzunluk-d-1) % uzunluk   düsturun qaynağı?
+    print(p)
 """
 """
-def permutation_of_string_except(s, j=0):
-    if j == len(s):
-        print(s, end=" ")
+# bir indeksi alır, indeksin evvlinde ve sonrasında gelen diger indeksleri sonuna elave edir. aydın olmayan sıralama: 1 2 4 3.
+def per(l):
+    if len(l) == 1:
+        return [l]
+    return [[l[i]] + p for i in range(len(l))for p in per(l[:i] + l [i+1:])]
+print(per([1,2,3,4]))
+"""
+"""
+def permutasyon(liste, index=0):
+    if index == len(liste):
+        print(liste)
         return 
-    for idx in range(j, len(s)):
-        s[idx], s[j]  = s[j], s[idx]
-        permutation_of_string_except(s, j+1)
-        s[idx], s[j]  = s[j], s[idx]
-permutation_of_string_except(['1', '2', '3'])
+    for i in range(index, len(liste)):
+        liste[i], liste[index]  = liste[index], liste[i]
+        permutasyon(liste, index+1)
+        liste[i], liste[index]  = liste[index], liste[i]
+permutasyon(['1', '2', '3']) # aydın olmayan sıralama?
+"""
+"""
+def permutasyon(liste, baslangic, son):
+    if baslangic == son:   # Recursion
+        print(liste)
+    else:
+        for i in range(baslangic, son + 1):
+            liste[baslangic], liste[i] = liste[i], liste[baslangic]
+            permutasyon(liste, baslangic + 1, son)
+            liste[baslangic], liste[i] = liste[i], liste[baslangic]
+rakamlar = [1, 2, 3]
+permutasyon(rakamlar, 0, len(rakamlar) - 1) # liste=rakamlar, baslangic=0 index, son=3-1 index # aydın olmayan sıralama?
+"""
+# backtracking / task 9, öz yazdığım
+"""
+rakamlar = [1, 2, 3]
+print(rakamlar)
+rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
+print(rakamlar)
+rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
+print(rakamlar)
+rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
+print(rakamlar)
+rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
+print(rakamlar)
+rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
+print(rakamlar)
+"""
+"""
+rakamlar = [1, 2, 3]
+print(rakamlar)
+for i in range(3):
+    rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
+    print(rakamlar)
+    if rakamlar[0] == 3 and rakamlar[2] == 1:
+        break
+    rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
+    print(rakamlar)
 """
