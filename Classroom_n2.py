@@ -106,50 +106,11 @@ elif secim == "2":
         a["a"].remove(ad)
         print("Ad silindi",a)
 """
-"""
+
 # task 9
 
-"""
-"""
-# task 9, google search: permutation using backtracking python
-
-# kodları sildim.
-
-# düsturların mənbəyi(kaykağı) yoxdur, sıralamanın necə oluştuğu anlaşılmır.
-
-# backtracking / permutasyon / task 9, öz yazdığım
-"""
-# adım 1
-"""
-rakamlar = [1, 2, 3]
-print(rakamlar)
-rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
-print(rakamlar)
-rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
-print(rakamlar)
-rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
-print(rakamlar)
-rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
-print(rakamlar)
-rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
-print(rakamlar)
-"""
-# adım 2
-"""
-rakamlar = [1, 2, 3]
-print(rakamlar)
-for i in range(3):
-    rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
-    print(rakamlar)
-    if rakamlar[0] == 3 and rakamlar[2] == 1:
-        break
-    rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
-    print(rakamlar)
-"""
-"""
 combination = [1, 2, 3]
 print(combination) # :p
-"""
 
 # Nested Loops / for loops w3schools / tekrarlı permutasyon
 rakamlar = [1, 2, 3]
@@ -157,3 +118,14 @@ for saygac1 in rakamlar:
     for saygac2 in rakamlar:
         for saygac3 in rakamlar:
             print([saygac1, saygac2, saygac3])
+
+# Nested Loops / for loops w3schools / permutasyon
+rakamlar1 = [1, 2, 3]
+permutasyonlar = []
+
+for saygac4 in rakamlar1:
+    for saygac5 in rakamlar1:
+        for saygac6 in rakamlar1:
+            if saygac4 != saygac5 and saygac4 != saygac6 and saygac5 != saygac6:
+                permutasyonlar.append([saygac4, saygac5, saygac6])
+print(permutasyonlar)
