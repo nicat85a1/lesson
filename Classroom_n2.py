@@ -129,3 +129,15 @@ for saygac4 in rakamlar1:
             if saygac4 != saygac5 and saygac4 != saygac6 and saygac5 != saygac6:
                 permutasyonlar.append([saygac4, saygac5, saygac6])
 print(permutasyonlar)
+
+# Backtracking ile
+
+rakamlar = [1, 2, 3]
+print(rakamlar)
+for i in range(3):
+    rakamlar[1], rakamlar[2] = rakamlar[2], rakamlar[1]
+    print(rakamlar)
+    if rakamlar[0] == 3 and rakamlar[2] == 1:
+        break
+    rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
+    print(rakamlar)
