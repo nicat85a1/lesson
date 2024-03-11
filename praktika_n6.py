@@ -9,6 +9,14 @@ for i in range(len(new_dict['name'])):
         break
         """
 """
+# task 1
+new_dict = {'name':['Orxan','Ali','Fuad','Maqa']}
+i = 0
+for x in new_dict['name']:
+    i += 1
+    print(i,".",x)
+"""
+"""
 # task 3
 
 inventory = {
@@ -88,3 +96,10 @@ value1 = input("Enter the value name: ")
 inventory[key1] = value1
 print(inventory)
 """
+
+buy = input("Enter the item name: ")
+sell = input("Enter the item name: ")
+cash = int(input("Enter the amount: "))
+
+if sell == "eur" and buy == "azn":
+    print(cash*1.7)
