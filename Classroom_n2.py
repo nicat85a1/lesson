@@ -130,7 +130,7 @@ for saygac4 in rakamlar1:
                 permutasyonlar.append([saygac4, saygac5, saygac6])
 print(permutasyonlar)
 
-# Backtracking ile
+# Backtracking ile permutasyon
 
 rakamlar = [1, 2, 3]
 print(rakamlar)
