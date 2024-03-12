@@ -106,7 +106,7 @@ elif secim == "2":
         a["a"].remove(ad)
         print("Ad silindi",a)
 """
-
+"""
 # task 9
 
 combination = [1, 2, 3]
@@ -141,3 +141,12 @@ for i in range(3):
         break
     rakamlar[0], rakamlar[2] = rakamlar[2], rakamlar[0]
     print(rakamlar)
+    """
+
+# for in for oto yapabilirmiyim?
+
+rakamlar = [1, 2, 3]
+for saygac1 in rakamlar:
+    for saygac2 in rakamlar:
+        for saygac3 in rakamlar:
+            print([saygac1, saygac2, saygac3])
