@@ -16,7 +16,6 @@ elif BKI > 25 and BKI < 30:
 elif BKI > 30:
     print("obez")
 """
-
 # task 2
 
 şifre = input("şifrenizi daxil edin: ")
