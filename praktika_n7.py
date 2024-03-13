@@ -91,7 +91,7 @@ cinema = {
     "man": {"family": ["inception"], "all": ["Mission Impossible","Extraction"]},
     "woman": {"family": ["inception","Barbie"], "all": ["Murder Mystery"]},
     "child": {'disney':['Transformers'],
-            'marvel':['Kaptan Marvel',"Blue Beetle"]},
+            'marvel':['Kaptan Marvel',"Blue Beetle"]}
 }
 
 gender = input("Cinsiyyetinizi daxil edin(man/woman): ")
