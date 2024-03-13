@@ -76,3 +76,16 @@ elif total_price_VAT >= 100:
     elif input("İstifadə etmək istədiyinizə əminsiz? (yes/no) : ") == "no":
         print(f"ödənəcək məbləğ : {total_price_VAT} AZN")
         """
+
+# task 3
+
+distance = float(input("Distance (km): "))
+type_of_vehicle = input("Type of vehicle(car/bus/truck) : ")
+if type_of_vehicle == "car":
+    print(f"Səfərin qiyməti {distance * 0.50:.2f} $")
+elif type_of_vehicle == "bus":
+    print(f"Səfərin qiyməti {distance * 1.00:.2f} $")
+elif type_of_vehicle == "truck":
+    print(f"Səfərin qiyməti {distance * 2.00:.2f} $")
+else:
+    print("Select vehicle type!")
