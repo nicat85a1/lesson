@@ -31,7 +31,6 @@ x = re.findall("[a-z]", şifre)
 z = re.findall("[A-Z]", şifre)
 v = re.findall("[$#@]", şifre)
 b = re.findall("[0-9]", şifre)
-print(x, z, v, b)
 
 if not (x):
     print("a-z yoxdur")
@@ -41,3 +40,6 @@ if not (v):
     print("simvol yoxdur")
 if not (b):
     print("0-9 yoxdur")
+
+if x and z and v and b:
+    print("şifre güclüdür")
