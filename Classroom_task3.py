@@ -25,19 +25,21 @@ print("Sizin üçün ideal çəki: ",r_min_BMI,"-",r_max_BMI)
 # task 2
 
 onlineMarket = {
-    "Smartphone": {"iphone": 50, "samsung": 40},
-    "Laptop": {"asus": 35, "dell": 40},
+    "sphone": {"iphone": 50, "samsung": 40},
+    "laptop": {"asus": 35, "dell": 40},
     "headset": {"jbl": 25, "apple": 30},
     "keyboard": {"logitech": 15, "razer": 20},
-    "usb memory": {"sandisk": 10, "giga": 5}
+    "memory": {"sandisk": 10, "giga": 5}
 }
 print(onlineMarket)
 shopping_cart = []
-for i in range(3):
-    print("sifarişi sonlandırmaq üçün 'cancel'")
-    category = input("Almaq istediyiniz məhsulun kateqoriyasını daxil edin: ")
-    add_to_cart = input("Almaq istediyiniz məhsulun adını daxil edin: ")
-    shopping_cart.append(onlineMarket[category][add_to_cart])
+for i in range(5):
+    try:
+        category = input("Almaq istediyiniz məhsulun kateqoriyasını daxil edin: ")
+        add_to_cart = input("Almaq istediyiniz məhsulun adını daxil edin: ")
+        shopping_cart.append(onlineMarket[category][add_to_cart])
+    except:
+        print("Daxil edilən kateqoriya və ya məhsul Mövcud deyil")
 total_price = 0
 for i in shopping_cart:
     total_price += i
