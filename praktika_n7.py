@@ -42,7 +42,7 @@ elif age >= 18 and gender == "woman":
 elif age < 18 and (gender == "man" or gender == "woman"):
     print(clothing["child"])
     """
-"""
+
 megafun = input("eylence növünü daxil edin(Bovling/Tramplin,fun): ")
 if megafun == "Bovling":
     age = int(input("Yashinizi daxil edin: "))
@@ -83,8 +83,8 @@ if megafun == "fun":
             else:
                 print("biletiniz hazırdı")
 
-"""
 
+"""
 # task 4
 
 cinema = {
@@ -122,3 +122,4 @@ elif gender == "woman":
             print(cinema["woman"]["all"])
         elif family == "uşaqla":
             print(cinema["woman"]["family"])
+            """
