@@ -103,7 +103,7 @@ if gender == "man":
             print(cinema["child"]["disney"])
         elif input("disney/marvel") == "marvel":
             print(cinema["child"]["marvel"])
-    elif age > 18:
+    elif age >= 18:
         family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla) ")
         if family == "tek":
             print(cinema["man"]["all"])
@@ -117,7 +117,7 @@ elif gender == "woman":
             print(cinema["child"]["disney"])
         elif input("disney/marvel") == "marvel":
             print(cinema["child"]["marvel"])
-    elif age > 18:
+    elif age >= 18:
         family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla) ")
         if family == "tek":
             print(cinema["woman"]["all"])
