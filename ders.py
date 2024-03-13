@@ -3,7 +3,7 @@
 kütle = float(input("çeki daxil et: "))
 boy = float(input("boy daxil et: "))
 
-BKI = kütle / ((boy / 100)**2)
+BKI = round(kütle / (boy / 100)**2, 1)
 
 print("BKI:", BKI)
 
@@ -15,7 +15,7 @@ elif BKI > 25 and BKI < 30:
     print("kilolu")
 elif BKI > 30:
     print("obez")
-    """
+"""
 
 # task 2
 
