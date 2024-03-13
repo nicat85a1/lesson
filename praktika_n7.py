@@ -96,7 +96,7 @@ cinema = {
 
 gender = input("Cinsiyyetinizi daxil edin(man/woman): ")
 if gender == "man":
-    age = input("yaşınızı daxil edin")
+    age = int(input("yaşınızı daxil edin: "))
     if age < 18:
         print(cinema["child"])
         if input("disney/marvel") == "disney":
@@ -104,13 +104,13 @@ if gender == "man":
         elif input("disney/marvel") == "marvel":
             print(cinema["child"]["marvel"])
     elif age > 18:
-        family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla)")
+        family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla) ")
         if family == "tek":
             print(cinema["man"]["all"])
         elif family == "uşaqla":
             print(cinema["man"]["family"])
 elif gender == "woman":
-    age = input("yaşınızı daxil edin")
+    age = int(input("yaşınızı daxil edin: "))
     if age < 18:
         print(cinema["child"])
         if input("disney/marvel") == "disney":
@@ -118,7 +118,7 @@ elif gender == "woman":
         elif input("disney/marvel") == "marvel":
             print(cinema["child"]["marvel"])
     elif age > 18:
-        family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla)")
+        family = input("teksiz yoxsa övladınızla gelmisiz?(tek/uşaqla) ")
         if family == "tek":
             print(cinema["woman"]["all"])
         elif family == "uşaqla":
