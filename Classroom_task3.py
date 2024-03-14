@@ -31,7 +31,7 @@ onlineMarket = {
     "keyboard": {"logitech": 15, "razer": 20},
     "memory": {"sandisk": 10, "giga": 5}
 }
-def add_to_shopping_cart(shopping_cart, onlineMarket):   # Recursion / yanlış input girilende restart üçün
+def add_to_shopping_cart():   # Recursion / yanlış input girilende restart üçün
     print(onlineMarket)
     for i in range(5):
         try:                                         # niyə try?   # key value, input ile yanlış girilende KeyError verir. ifelse ile bu xetanı gizlede bilmedim.
@@ -40,11 +40,11 @@ def add_to_shopping_cart(shopping_cart, onlineMarket):   # Recursion / yanlış 
             shopping_cart.append(onlineMarket[category][add_to_cart]) # kodun qısa olmağı üçün 'if add_to_cart ==' istifade etmedim.
         except KeyError:
             print("Daxil edilən kateqoriya və ya məhsul Mövcud deyil")
-            add_to_shopping_cart(shopping_cart, onlineMarket) # xeta aldıqda restart
+            add_to_shopping_cart() # xeta aldıqda restart
             break
 
 shopping_cart = []
-add_to_shopping_cart(shopping_cart, onlineMarket)
+add_to_shopping_cart()
 
 # def son
 
