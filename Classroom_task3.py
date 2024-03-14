@@ -35,6 +35,10 @@ def add_to_shopping_cart():   # Recursion / yanlış input girilende restart ü�
     print(onlineMarket)
     for i in range(5):
         try:                  # niyə try?   # key value, input ile yanlış girilende KeyError verir. ifelse ile bu xetanı gizlede bilmedim.
+            exit = input("Alışverişi bitirmek üçün 'cancel', davam etmek üçün ''Enter'e basın': ")
+            if exit == "cancel":
+                print("Alışveriş bitdi.")
+                break
             category = input("Almaq istediyiniz məhsulun kateqoriyasını daxil edin: ")
             add_to_cart = input("Almaq istediyiniz məhsulun adını daxil edin: ")
             shopping_cart.append(onlineMarket[category][add_to_cart]) # kodun qısa olmağı üçün 'if add_to_cart ==' istifade etmedim.
