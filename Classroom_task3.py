@@ -46,7 +46,7 @@ def add_to_shopping_cart():   # Recursion / yanlış input girilende restart ü�
 shopping_cart = []
 add_to_shopping_cart()
 
-# def son
+# def son 
 
 total_price = 0
 for i in shopping_cart:
