@@ -6,6 +6,17 @@ for saygac1 in rakamlar:
     for saygac2 in rakamlar:
         for saygac3 in rakamlar:
             print([saygac1, saygac2, saygac3])
+
+vurulan = 1
+
+while vurulan <= 10:
+	vuran = 1 # ?
+	while vuran <= 10:
+		hasil = vurulan * vuran
+		print(vurulan, "x", vuran, "=", hasil, end="\t")
+		vuran += 1
+	print()
+	vurulan += 1
 """
 
 # Recursion
