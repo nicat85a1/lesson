@@ -67,7 +67,6 @@ variantlar = {
 dogru_cavab = 0
 yanlis_cavab = 0
 
-# Her soru için döngü
 for sual, cavab in suallar.items():
     print(sual)
     print(variantlar[sual])
