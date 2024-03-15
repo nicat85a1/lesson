@@ -45,75 +45,44 @@ for i in range(3):
         print(şans-1, "şansınız qaldı")
         şans -= 1
         """
-"""
+
 # task 5
 
-sual1 = "3+4 toplamını girin"
-sual1c = "A) 3 B) 4 C) 7 D) 8"
-sual2 = "sade ededler nedir?"
-sual2c = "A) sadece özüne ve 1'e bölünen ededler B) fsdf C) fsdd D) sfsd"
-sual3 = "ededin sade eded olub olmadigini tapmaq üçün ne edirik?"
-sual3c = "A) B) C) D) ededi 2 den kökaltına qeder bütün ededlere bölürük"
-sual4 = "p = np nedir?"
-sual4c = "A) B) belirli problemler için polinom mertebesinde bir sürede çalışacak bir algoritma varmı? C) D)"
-sual5 = "yuxarıda neçe sual verilib?"
-sual5c = "A)3 B)5 C)4 D)2"
+suallar = {
+    "3+4 toplamını girin": "C",
+    "sade ededler nedir?": "A",
+    "ededin sade eded olub olmadigini tapmaq üçün ne edirik?": "D",
+    "p = np nedir?": "B",
+    "yuxarıda neçe sual verilib?": "C"
+}
+
+variantlar = {
+    "3+4 toplamını girin": "A) 3 B) 4 C) 7 D) 8",
+    "sade ededler nedir?": "A) sadece özüne ve 1'e bölünen ededler B) fsdf C) fsdd D) sfsd",
+    "ededin sade eded olub olmadigini tapmaq üçün ne edirik?": "A) B) C) D) ededi 2 den kökaltına qeder bütün ededlere bölürük",
+    "p = np nedir?": "A) B) belirli problemler için polinom mertebesinde bir sürede çalışacak bir algoritma varmı? C) D)",
+    "yuxarıda neçe sual verilib?": "A)3 B)5 C)4 D)2"
+}
 
 dogru_cavab = 0
 yanlis_cavab = 0
 
-print(sual1)
-print(sual1c)
-cavab = input("cavabı seçin: ")
-if cavab == "C":
-    print("sizin cavabınız doğru")
-    dogru_cavab += 1
-else:
-    print("sizin cavabınız yanlış")
-    yanlis_cavab += 1
-print()
-print(sual2)
-print(sual2c)
-cavab = input("cavabı seçin: ")
-if cavab == "A":
-    print("sizin cavabınız doğru")
-    dogru_cavab += 1
-else:
-    print("sizin cavabınız yanlış")
-    yanlis_cavab += 1
-print()
-print(sual3)
-print(sual3c)
-cavab = input("cavabı seçin: ")
-if cavab == "D":
-    print("sizin cavabınız doğru")
-    dogru_cavab += 1
-else:
-    print("sizin cavabınız yanlış")
-    yanlis_cavab += 1
-print()
-print(sual4)
-print(sual4c)
-cavab = input("cavabı seçin: ")
-if cavab == "B":
-    print("sizin cavabınız doğru")
-    dogru_cavab += 1
-else:
-    print("sizin cavabınız yanlış")
-    yanlis_cavab += 1
-print()
-print(sual5)
-print(sual5c)
-cavab = input("cavabı seçin: ")
-if cavab == "C":
-    print("sizin cavabınız doğru")
-    dogru_cavab += 1
-else:
-    print("sizin cavabınız yanlış")
-    yanlis_cavab += 1
+# Her soru için döngü
+for sual, cavab in suallar.items():
+    print(sual)
+    print(variantlar[sual])
+    cavabi = input("cavabı seçin: ")
+    if cavabi == cavab:
+        print("sizin cavabınız doğrudur")
+        dogru_cavab += 1
+    else:
+        print("sizin cavabınız yanlışdir")
+        yanlis_cavab += 1
+    print()
 
 if yanlis_cavab == 4:
     dogru_cavab -= 1
-print("sonucunuz: ", dogru_cavab)
-print("yanlis cavab", yanlis_cavab)
-"""
+    print("1 düzgün cavabınız silindi")
+
+print("Doğru cavab: ", dogru_cavab)
+print("Yanlis cavab: ", yanlis_cavab)
