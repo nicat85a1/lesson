@@ -7,8 +7,7 @@ while True:
         print(list1.pop(0))
     except IndexError:
         break
-"""
-"""
+
 # task 2
 
 list2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
@@ -20,8 +19,6 @@ while index < len(list2):
         continue
     print(list2[index])
     index += 1
-    """
-
 
 # task 3
 
@@ -33,8 +30,9 @@ while True:
         print(i)
         i+=1
     break
-"""
+
 # task 4
+
 password = "123456"
 
 şans = 3
