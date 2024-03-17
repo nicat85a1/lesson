@@ -69,3 +69,17 @@ dosya.readlines() # satırı liste olarak hepsini alır
 with open("deneme.txt","r") as dosya:
     print(dosya.read())
 """
+"""
+with open("deneme.txt","r+") as dosya: # hem okumak hem yazmak için r+
+    data = dosya.read() # dosyayı oku
+    dosya.seek(0) # en başa git
+    data = "naber\n" + data 
+    dosya.write(data) 
+"""
+"""
+with open("deneme.txt","r+") as dosya:
+    data = dosya.readlines()
+    data.insert(1,"naber\n")
+    dosya.seek(0)
+    dosya.writelines(data) # ortada yazma
+"""
