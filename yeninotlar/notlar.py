@@ -41,3 +41,31 @@ def harf():
     return a # return b
 print(harf())
 """
+"""
+import modul1
+
+modul1.selamla()
+"""
+"""
+try:
+    dosya = open("deneme.txt","r")
+except:
+    print("hata")
+finally:
+    dosya.close()
+"""
+"""
+dosya = open("deneme.txt","r")
+
+dosya.read() # hepsini alır
+
+dosya.readline() # satırı alır
+
+dosya.readlines() # satırı liste olarak hepsini alır
+"""
+# önerilen
+
+"""
+with open("deneme.txt","r") as dosya:
+    print(dosya.read())
+"""
