@@ -70,12 +70,13 @@ def kwargs(**kwargs):
   print("Your name is" " " + kwargs["names"])
 
 kwargs(names = "Nicat")
-"""
+
+# task 7
 
 def max(n1,n2,n3):
     print(max(n1,n2,n3))
 max(5,10,15)
-
+"""
 def calculate(x,y):
     def sum(a):
         return a+x
