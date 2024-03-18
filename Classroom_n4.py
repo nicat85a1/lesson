@@ -79,7 +79,7 @@ for sual, cavab in suallar.items():
         yanlis_cavab += 1
     print()
 
-if yanlis_cavab == 4:
+if yanlis_cavab == 4: # suallarin sayi artsa bu sert islemeyecek
     dogru_cavab -= 1
     print("1 düzgün cavabınız silindi")
 
