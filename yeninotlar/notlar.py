@@ -83,3 +83,16 @@ with open("deneme.txt","r+") as dosya:
     dosya.seek(0)
     dosya.writelines(data) # ortada yazma
 """
+
+"""
+def test(*args):
+    print("im from",args[0])
+
+test("test","test1")
+"""
+"""
+def test(**kwargs):
+    print("im from",kwargs["country"])
+
+test(city="test1",country="test2")
+"""
