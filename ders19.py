@@ -40,3 +40,11 @@ def product(name,price,quantity):
 
 print(product("apple",10,5))
 """
+
+def budce(*args):
+    for i in range(3):
+        xerc=int(input("xerc: "))
+        gelir=int(input("gelir: "))
+        print("budceniz qaldi: ",gelir-xerc)
+    return
+budce() # inport
