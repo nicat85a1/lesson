@@ -76,7 +76,9 @@ kwargs(names = "Nicat")
 def max(n1,n2,n3):
     print(max(n1,n2,n3))
 max(5,10,15)
-"""
+
+# task 8
+
 def calculate(x,y):
     def sum(a):
         return a+x
@@ -92,3 +94,18 @@ print(sum(10))
 print(mul(10))
 print(div(10))
 print(sub(10))
+"""
+import random
+
+texmin = random.randint(1,20)
+
+while True:
+    kullanici = int(input("Texmini tap edin: "))
+    if texmin == kullanici:
+        print("Tebrikler")
+        break
+    else:
+        if texmin > kullanici:
+            print("yuxari")
+        elif texmin < kullanici:
+            print("asagi")
