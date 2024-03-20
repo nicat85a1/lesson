@@ -1,6 +1,9 @@
 # evaluation.py dosyasında
 
 def student_grades(students, subjects):
+    if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
+        return
     grades = {student: [] for student in students}
     for student in students:
         for subject in subjects:
