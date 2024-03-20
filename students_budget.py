@@ -17,4 +17,3 @@ def budget(students):
         students_budget.append(f"{student}'s budget: {budget}")
     for line in students_budget:
         print(line)
-budget(students="")
