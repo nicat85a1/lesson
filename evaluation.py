@@ -1,4 +1,16 @@
 def student_grades(students, subjects):
+    if isinstance(students, int) and isinstance(subjects, int):
+        print("Please enter a student/subject name.")
+        return
+    if not all(isinstance(student, str) for student in students) and all(isinstance(subject, str) for subject in subjects):
+        print("Please enter a student name.")
+        return
+    if isinstance(students, str) and isinstance(subjects, str):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
+        return
+    if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
+        return
     grades = {student: [] for student in students}
     for student in students:
         for subject in subjects:
