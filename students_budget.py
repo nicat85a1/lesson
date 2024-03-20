@@ -1,4 +1,10 @@
 def budget(students):
+    if not all(isinstance(student, str) for student in students):
+        print("Please enter a student name.")
+        return
+    if not isinstance(students, (list, dict, tuple)):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
+        return
     students_budget = []
     for student in students:
         income_scholarship = get_valid_input(f"Enter {student} scholarship income: ")
