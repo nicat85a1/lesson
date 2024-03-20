@@ -1,15 +1,9 @@
 def budget(students):
-    if isinstance(students, int):
-        print("Please enter a student name.")
+    if not isinstance(students, (list, dict, tuple)):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     if not all(isinstance(student, str) for student in students):
         print("Please enter a student name.")
-        return
-    if isinstance(students, str):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
-        return
-    if not isinstance(students, (list, dict, tuple)):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     students_budget = []
     for student in students:

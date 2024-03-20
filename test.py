@@ -1,6 +1,5 @@
-from evaluation import student_evaluation
+from students_budget import budget
 
-students = 1
-subjects = ["English", "informatics", "math", "python"]
+students = [""]
 
-student_evaluation(students, subjects)
+budget(students)
