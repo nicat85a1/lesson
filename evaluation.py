@@ -4,7 +4,15 @@ def student_grades(students, subjects):
     grades = {student: [] for student in students}
     for student in students:
         for subject in subjects:
-            grade = float(input(f"{student} {subject} grade: "))
+            while True:
+                try:
+                    grade = float(input(f"{student} {subject} grade: "))
+                    if 0 <= grade <= 100:
+                        break
+                    else:
+                        print("Please enter a grade between 0 and 100.")
+                except ValueError:
+                    print("Please enter a valid number.")
             grades[student].append(grade)
     return grades
 
