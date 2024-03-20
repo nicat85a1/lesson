@@ -10,12 +10,15 @@ def bmi_calculator():
                 print("Please enter a height between 0 and 2.51")
         except ValueError:
             print("Please enter a valid number.")
+    
     bmi = weight / (height ** 2)
     if bmi < 18.5:
-        return f"{bmi:.2f}","Underweight"
+        status = "Underweight"
     elif bmi < 25:
-        return f"{bmi:.2f}","Normal weight"
+        status = "Normal weight"
     elif bmi < 30:
-        return f"{bmi:.2f}","Overweight"
+        status = "Overweight"
     else:
-        return f"{bmi:.2f}","Obese"
+        status = "Obese"
+
+    print(f"BMI: {bmi:.2f} , Status: {status}.")

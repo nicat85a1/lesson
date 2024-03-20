@@ -1,4 +1,4 @@
-
+"""
 # Maliyyə Sənayesi:
 
 # "Boris","Benjamin","Cedric","Drake","Elliott","Francis","Herman","Luther","Morgan","Miles","Richard","Martel"
@@ -13,8 +13,8 @@ budget(students)
 
 from bmi import bmi_calculator
 
-result,status = bmi_calculator()
-print(f"BMI: {result} , Status: {status}.")
+bmi_calculator()
+"""
 
 # Təhsil Sənayesi:
 
