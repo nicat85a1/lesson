@@ -1,6 +1,6 @@
 from evaluation import student_evaluation
 
-students = ""
+students = 1
 subjects = ["English", "informatics", "math", "python"]
 
 student_evaluation(students, subjects)

@@ -1,12 +1,6 @@
 def student_grades(students, subjects):
-    if isinstance(students, int) and isinstance(subjects, int):
-        print("Please enter a student/subject name.")
-        return
     if not all(isinstance(student, str) for student in students) and all(isinstance(subject, str) for subject in subjects):
         print("Please enter a student name.")
-        return
-    if isinstance(students, str) and isinstance(subjects, str):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
         print("The 'students' parameter must be a list, dictionary, or tuple.")
@@ -27,14 +21,8 @@ def student_grades(students, subjects):
     return grades
 
 def student_grades_averages(students, subjects):
-    if isinstance(students, int) and isinstance(subjects, int):
-        print("Please enter a student/subject name.")
-        return
     if not all(isinstance(student, str) for student in students) and all(isinstance(subject, str) for subject in subjects):
         print("Please enter a student name.")
-        return
-    if isinstance(students, str) and isinstance(subjects, str):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
         print("The 'students' parameter must be a list, dictionary, or tuple.")
@@ -46,17 +34,11 @@ def student_grades_averages(students, subjects):
     return averages
 
 def student_evaluation(students, subjects):
-    if isinstance(students, int) and isinstance(subjects, int):
-        print("Please enter a student/subject name.")
+    if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
+        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     if not all(isinstance(student, str) for student in students) and all(isinstance(subject, str) for subject in subjects):
         print("Please enter a student name.")
-        return
-    if isinstance(students, str) and isinstance(subjects, str):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
-        return
-    if not isinstance(students, (list, dict, tuple)) and isinstance(subjects, (list, dict, tuple)):
-        print("The 'students' parameter must be a list, dictionary, or tuple.")
         return
     averages = student_grades_averages(students, subjects)
     for student, average in averages.items():
