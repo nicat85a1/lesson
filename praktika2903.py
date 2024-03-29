@@ -1,16 +1,4 @@
-"""1. Write a Python class Employee with attributes like emp_id, emp_name, emp_salary, and emp_department and methods like calculate_emp_salary, emp_assign_department, and print_employee_details.
-Sample Employee Data:
-"ADAMS", "E7876", 50000, "ACCOUNTING"
-"JONES", "E7499", 45000, "RESEARCH"
-"MARTIN", "E7900", 50000, "SALES"
-"SMITH", "E7698", 55000, "OPERATIONS"
-Use 'assign_department' method to change the department of an employee.
-Use 'print_employee_details' method to print the details of an employee.
-Use 'calculate_emp_salary' method takes two arguments: salary and hours_worked, which is the number of hours worked by the employee. If the number of hours worked is more than 50, the method computes overtime and adds it to the salary. Overtime is calculated as following formula:
-overtime = hours_worked - 50
-Overtime amount = (overtime * (salary / 50))"""
-
-class Employee():
+class Employee:
 
     def __init__(self, emp_id, emp_name, emp_age, emp_salary, emp_department):
         self.emp_id = emp_id
@@ -19,35 +7,41 @@ class Employee():
         self.emp_salary = emp_salary
         self.emp_department = emp_department
     
-    def show(self):
+    def print_employee_details(self):
         return self.emp_id, self.emp_name, self.emp_age, self.emp_salary, self.emp_department
 
-employee1 = Employee(emp_id="E7876",emp_department="ACCOUNTING", emp_name=input("Enter employee name: "), emp_age=input("Enter employee age: "), emp_salary=input("Enter employee salary:"))
-#employee2 = Employee(emp_id="E7499",emp_department="RESEARCH", emp_name=input("Enter employee name: "), emp_age=input("Enter employee age: "), emp_salary=input("Enter employee salary:"))
-#employee3 = Employee(emp_id="E7900",emp_department="SALES", emp_name=input("Enter employee name: "), emp_age=input("Enter employee age: "), emp_salary=input("Enter employee salary:"))
-#employee4 = Employee(emp_id="E7698",emp_department="OPERATIONS", emp_name=input("Enter employee name: "), emp_age=input("Enter employee age: "), emp_salary=input("Enter employee salary:"))
-
-#print(employee1.show())
-#print(employee2.show())
-#print(employee3.show())
-#print(employee4.show())
-
-# change the department of an employee
-def emp_assign_department(self=input("Enter employee id def: ")):
-    if emp_assign_department == self:
-        self.emp_department = input("Enter employee department: ")
-        return self.emp_department
-    else:
+    @classmethod
+    def emp_assign_department(cls, emp_id_check, new_department):
+        for employee in employees:
+            if employee.emp_id == emp_id_check:
+                employee.emp_department = new_department
+                print(f"Employee id {emp_id_check} department is changed to {new_department}")
+                return
         print("Employee id not found")
-emp_assign_department()
-print(employee1.show())
-"""
-# print the details of an employee
-def print_employee_details(self):
-    print
+    
+    def calculate_emp_salary(self, hours_worked):
+        salary = self.emp_salary
+        if hours_worked > 50:
+            overtime = hours_worked - 50
+            overtime_amount = (overtime * (salary / 50))
+            self.emp_salary = self.emp_salary + overtime_amount
+            return self.emp_salary
+        else:
+            return self.emp_salary
 
-def calculate_emp_salary(self,salary,hours_worked):
-    if hours_worked > 50:
-        overtime = hours_worked - 50
-        overtime_ammount = (overtime * (salary / 50))
-"""
+employees = [
+    Employee(emp_id="E7876", emp_name=input("Enter employee name: "), emp_age=int(input("Enter employee age: ")), emp_salary=int(input("Enter employee salary: ")), emp_department="ACCOUNTING"),
+    Employee(emp_id="E7499", emp_name=input("Enter employee name: "), emp_age=int(input("Enter employee age: ")), emp_salary=int(input("Enter employee salary: ")), emp_department="RESEARCH"),
+    Employee(emp_id="E7900", emp_name=input("Enter employee name: "), emp_age=int(input("Enter employee age: ")), emp_salary=int(input("Enter employee salary: ")), emp_department="SALES"),
+    Employee(emp_id="E7698", emp_name=input("Enter employee name: "), emp_age=int(input("Enter employee age: ")), emp_salary=int(input("Enter employee salary: ")), emp_department="OPERATIONS")
+]
+
+Employee.emp_assign_department(emp_id_check=input("Enter Employee id: "), new_department=input("Enter new Department: "))
+
+employees[0].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+employees[1].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+employees[2].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+employees[3].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+
+for employee in employees:
+    print(employee.print_employee_details())
