@@ -39,9 +39,9 @@ employees = [
 Employee.emp_assign_department(emp_id_check=input("Enter Employee id: "), new_department=input("Enter new Department: "))
 
 employees[0].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
-employees[1].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
-employees[2].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
-employees[3].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+employees[1].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[1].emp_id}: ")))
+employees[2].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[2].emp_id}: ")))
+employees[3].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[3].emp_id}: ")))
 
 for employee in employees:
     print(employee.print_employee_details())
