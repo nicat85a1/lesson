@@ -1,4 +1,4 @@
-"""class Car:
+class Car:
     def __init__(self, brand, model, speed):
         self.brand = brand
         self.model = model
@@ -7,8 +7,8 @@
     def show(self):
         return self.brand, self.speed
     
-obj = Car("BMW", "X5", 200)
-print(obj.show())"""
+obj = Car("BMW", "X5", speed=input("Введите скорость: "))
+print(obj.show())
 
 """max_ = int(input("Введите максимальную скорость: "))
 km_ = int(input("Введите пробег: "))
@@ -22,7 +22,7 @@ class Vehicle:
     
 obj = Vehicle(max_, km_)
 print(obj.times())"""
-
+"""
 class BusSystem:
     gedis = 1
     def __init__(self, category=input("Введите категорию: "), age=int(input("Введите возраст: ")), cash=float(input("Введите сумму: "))):
@@ -31,13 +31,13 @@ class BusSystem:
         self.cash = cash
 
     def access(self):
-        if self.age < 18:
+        if self.age < 18 and self.category == None:
             self.cash = self.cash - (self.gedis * 0.2)
             return self.cash
         elif self.age < 18 and self.category == "student":
             self.cash = self.cash - (self.gedis * 0.05)
             return self.cash
-        elif 18 < self.age < 50:
+        elif 18 < self.age < 50 and self.category == None:
             self.cash = self.cash - (self.gedis * 0.4)
             return self.cash
         elif 18 < self.age < 50 and self.category == "qazi":
@@ -49,3 +49,4 @@ class BusSystem:
 bus = BusSystem()
 
 print(bus.access())
+"""
