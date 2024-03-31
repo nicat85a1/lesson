@@ -19,7 +19,7 @@ class Employee:
                 return
         print("Employee id not found")
     
-    def calculate_emp_salary(self, hours_worked): # self.salary = self.emp_salary ??
+    def calculate_emp_salary(self, salary, hours_worked):
         salary = self.emp_salary
         if hours_worked > 50:
             overtime = hours_worked - 50
