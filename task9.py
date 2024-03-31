@@ -58,6 +58,9 @@ employees = [
     Employee(emp_id="E7698", emp_name=input("Enter employee name: "), emp_age=int(input_age("Enter employee age: ")), emp_salary=int(input_salary("Enter employee salary: ")), emp_department="OPERATIONS")
 ]
 
+for employee in employees:
+    print(employee.print_employee_details())
+
 Employee.emp_assign_department(emp_id_check=input("Enter Employee id: "), new_department=input("Enter new Department: "))
 
 employees[0].calculate_emp_salary(employees[0].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
