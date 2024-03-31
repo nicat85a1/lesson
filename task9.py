@@ -19,7 +19,7 @@ class Employee:
                 return
         print("Employee id not found")
     
-    def calculate_emp_salary(self, hours_worked):
+    def calculate_emp_salary(self, salary, hours_worked):
         salary = self.emp_salary
         if hours_worked > 50:
             overtime = hours_worked - 50
@@ -33,7 +33,7 @@ def input_age(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if 120 < value < 0:
+            if value > 120 or value < 0:
                 print("Please enter a value greater than 0 or less than 120.")
             else:
                 return value
@@ -60,10 +60,10 @@ employees = [
 
 Employee.emp_assign_department(emp_id_check=input("Enter Employee id: "), new_department=input("Enter new Department: "))
 
-employees[0].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
-employees[1].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[1].emp_id}: ")))
-employees[2].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[2].emp_id}: ")))
-employees[3].calculate_emp_salary(hours_worked=int(input(f"Enter hours worked {employees[3].emp_id}: ")))
+employees[0].calculate_emp_salary(employees[0].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
+employees[1].calculate_emp_salary(employees[1].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[1].emp_id}: ")))
+employees[2].calculate_emp_salary(employees[2].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[2].emp_id}: ")))
+employees[3].calculate_emp_salary(employees[3].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[3].emp_id}: ")))
 
 for employee in employees:
     print(employee.print_employee_details())
