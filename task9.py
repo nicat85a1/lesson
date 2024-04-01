@@ -24,7 +24,7 @@ class Employee:
         if hours_worked > 50:
             overtime = hours_worked - 50
             overtime_amount = (overtime * (salary / 50))
-            self.emp_salary = self.emp_salary + overtime_amount
+            self.emp_salary += overtime_amount
             return self.emp_salary
         else:
             return self.emp_salary
