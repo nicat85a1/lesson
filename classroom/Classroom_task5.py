@@ -24,7 +24,7 @@ bmi_calculator()
 ### Təhsil Sənayesi:
 
 
-from evaluation import student_evaluation
+from classroom.evaluation import student_evaluation
 
 students = ["Albert", "Arthur"]
 subjects = ["English", "informatics", "math", "python"]
