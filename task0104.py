@@ -21,7 +21,7 @@ x = datetime.datetime.now()
 def calculate_brith():
     name = input("Enter your name: ")
     today = date.today()
-    brith = date(year=int(input("Enter Brith year: "))+int(x.strftime("%Y"))-2000, month=int(input("Enter Brith month: ")), day=int(input("Enter Brith day: ")))
+    brith = date(int(x.strftime("%Y")), month=int(input("Enter Brith month: ")), day=int(input("Enter Brith day: ")))
     calculate = brith - today
     if calculate.days < 0:
         print("Hormetli",{name}, "Sizin Ad gununuze",{365+calculate.days}, "gun" ,{24-int(x.strftime("%H"))}, "saat" ,{60-int(x.strftime("%M"))}, "deq" ,{60-int(x.strftime("%S"))}, "saniye qalib")
