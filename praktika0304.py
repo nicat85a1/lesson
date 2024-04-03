@@ -73,14 +73,17 @@ else:
 login = {"user777": "12345!."}
 print(login)
 
-choice = "Update(press 1), Delete(press 2), Exit(press 3): "
+choice = "Update_user(press 1), Update_pass(press 2), Delete(press 3): "
 print(choice)
 
 import keyboard
 
 while True:
     if keyboard.is_pressed("1"):
-    
+        old_key = "user777"
+        new_key = "user999"
+        login[new_key] = login.pop(old_key)
+        print(f"Updated dictionary: {login}")
         break
     elif keyboard.is_pressed("2"):
         login["user777"] = input("Enter new password: ")
