@@ -61,12 +61,19 @@ employees = [
 for employee in employees:
     print(employee.print_employee_details())
 
+"""@classmethod
+    def emp_assign_department(cls, emp_id_check, new_department):
+        for employee in employees:
+            if employee.emp_id == emp_id_check:
+                employee.emp_department = new_department
+                print(f"Employee id {emp_id_check} department is changed to {new_department}")
+                return
+        print("Employee id not found")"""
+
 Employee.emp_assign_department(emp_id_check=input("Enter Employee id: "), new_department=input("Enter new Department: "))
 
-employees[0].calculate_emp_salary(employees[0].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[0].emp_id}: ")))
-employees[1].calculate_emp_salary(employees[1].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[1].emp_id}: ")))
-employees[2].calculate_emp_salary(employees[2].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[2].emp_id}: ")))
-employees[3].calculate_emp_salary(employees[3].emp_salary,hours_worked=int(input(f"Enter hours worked {employees[3].emp_id}: ")))
+for employee in employees:
+    employee.calculate_emp_salary(employee.emp_salary,hours_worked=int(input(f"Enter hours worked for {employee.emp_id}: ")))
 
 for employee in employees:
     print(employee.print_employee_details())
