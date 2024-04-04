@@ -28,8 +28,7 @@ import re
 
 x = re.findall("[a-z]", şifre)
 z = re.findall("[A-Z]", şifre)
-v = re.findall("[$#!]", şifre)
-v = re.search("[$#!]", şifre)
+v = re.findall("[$#!@]", şifre)
 b = re.findall("[0-9]", şifre)
 
 if not (x):
