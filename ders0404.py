@@ -18,7 +18,7 @@ my_json = {
 
 print(my_json["address"]["zip_code"])"""
 
-users = {
+"""users = {
     "user1": {
         "name": "John",
         "age": 30
@@ -30,4 +30,4 @@ users = {
 }
 
 for user, info in users.items():
-    print(info)
+    print(info)"""
