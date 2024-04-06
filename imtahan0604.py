@@ -3,8 +3,6 @@
 high_priority = ["heart","cancer","corona"]
 
 highest_superiority_patients = []
-midlle_superiority_patients = []
-inferior_superiority_patients = []
 
 class Patient:
 
