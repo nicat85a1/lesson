@@ -12,6 +12,9 @@ class Patient:
             return 'YellowZone'
         else:
             return 'GreenZone'
+        
+    #def __str__(self):
+        return f"Adı: {self.name}, Yaşı: {self.age}, Xəstəliyi: {self.disease}, Prioritet: {self.determine_priority()}"
 
 patients = []
 for _ in range(2):
@@ -19,7 +22,10 @@ for _ in range(2):
     age = int(input("Xəstənin yaşını daxil edin: "))
     disease = input("Xəstənin xəstəliyini daxil edin: ")
     patient = Patient(name, age, disease)
-    patients.append((patient, patient.determine_priority()))
+    patients.append((patient))
 
-for patient, priority in patients:
-    print(f"Adı: {patient.name}, Yaşı: {patient.age}, Xəstəliyi: {patient.disease}, Prioritet: {priority}")
+for patient in patients:
+    print(f"Adı: {patient.name}, Yaşı: {patient.age}, Xəstəliyi: {patient.disease}, Prioritet: {patient.determine_priority()}")
+
+#for patient in patients:
+    #print(patient)
