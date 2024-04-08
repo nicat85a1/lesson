@@ -22,7 +22,8 @@ for _ in range(2):
     age = int(input("Xəstənin yaşını daxil edin: "))
     disease = input("Xəstənin xəstəliyini daxil edin: ")
     patient = Patient(name, age, disease)
-    patients.append((patient))
+    #patients.append((patient))
+    patients.append((Patient(name,age,disease)))
 
 for patient in patients:
     print(f"Adı: {patient.name}, Yaşı: {patient.age}, Xəstəliyi: {patient.disease}, Prioritet: {patient.determine_priority()}")
