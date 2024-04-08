@@ -4,8 +4,7 @@ db = sqlite3.connect('data.db')
 sql = db.cursor()
 sql.execute("""
             
-            ALTER TABLE data
-            ADD ADLAR datatype;
+            UPDATE data SET name = 'alixan' WHERE rowid = 1;
             
             """)
 sql.execute("INSERT INTO data(name) VALUES ('orxan')")
