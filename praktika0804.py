@@ -64,7 +64,7 @@ while input("Kartı qaytar? (y/n): ") == "n":
         sql.execute(f"SELECT cash FROM users WHERE pin = {pincode}")
         user_cash = sql.fetchone()[0]
         cixaris = get_valid_cash("pul çıxar: ")
-        if cixaris > user_cash:
+        if cixaris >= user_cash:
             print("Yetersiz bakiye")
         else:
             new_cash = user_cash - cixaris
