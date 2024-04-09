@@ -16,8 +16,9 @@ sql.execute("""
 # sql.execute("INSERT INTO users(cash,pin) VALUES ('5000','6969')")
 data.commit()
 
+pincode = int(input("pin kodunuzu daxil edin: "))
+
 while input("çıxış? (y/n): ") == "n":
-    pincode = int(input("pin kodunuzu daxil edin: "))
     sql.execute("SELECT * FROM users")
     sqluser = sql.fetchall()
     user_exists = any(pincode == user[1] for user in sqluser)
@@ -51,6 +52,7 @@ while input("çıxış? (y/n): ") == "n":
     elif select == "4":
         new_pin = int(input("yeni pin kodunuzu daxil edin: "))
         sql.execute(f"UPDATE users SET pin = {new_pin} WHERE pin = {pincode}")
+        pincode = new_pin
         data.commit()
         print("Pin kodunuz değiştirildi")
     elif select == "5":
