@@ -18,7 +18,7 @@ data.commit()
 
 pincode = int(input("pin kodunuzu daxil edin: "))
 
-while input("çıxış? (y/n): ") == "n":
+while input("Kartı qaytar? (y/n): ") == "n":
     sql.execute("SELECT * FROM users")
     sqluser = sql.fetchall()
     user_exists = any(pincode == user[1] for user in sqluser)
