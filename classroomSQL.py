@@ -47,11 +47,10 @@ def choice_func():
                 print("Invalid input. Please enter numbers only.")
 
     choice = input("Seçim edin (1) Qeydiyyatdan keçin (2) Giriş edin (3) Oyuna başla (4) İstifadəçini bazadan silin (5) Balansı yoxla: ")
-    Login = get_valid_log("bir username girin: ")
-    Password = get_valid_pass("bir parol girin: ")
+    login = get_valid_log("bir username girin: ")
+    password = get_valid_pass("bir parol girin: ")
 
-    def game():
-        login = Login
+    def game(login):
         sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
         cash_game = sql.fetchone()[0]
         start = input("Oyuna başlamaq üçün ENTER basın! (çıxmaq üçün (Q)): ")
@@ -82,7 +81,7 @@ def choice_func():
                 print(f"Sayının SHA256 hash'i: {hex_dig}")
                 continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
                 if continue_func == 'y':
-                    game()
+                    game(login)
                 else:
                     print("Oyun sonlandırıldı")
             else:
@@ -99,13 +98,11 @@ def choice_func():
                 print(f"Sayının SHA256 hash'i: {hex_dig}")
                 continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
                 if continue_func == 'y':
-                    game()
+                    game(login)
                 else:
                     print("Oyun sonlandırıldı")
 
-    def login_func():
-        login = Login
-        password = Password
+    def login_func(login,password):
         sql.execute("SELECT * FROM users")
         sqluser = sql.fetchall()
         user_exists1 = any(login == user[0] for user in sqluser)
@@ -126,7 +123,7 @@ def choice_func():
                 balance()
 
                 if input("Oyun səhifəsinə giriş etmək istəyirsiz? (y/n): ") == 'y':
-                    game()
+                    game(login)
                 else:
                     print("Giriş edilmedi")
             else:
@@ -134,15 +131,13 @@ def choice_func():
                 user_cash = sql.fetchone()[0]
                 print("Balansınız: ", user_cash)
                 if input("Oyun sehifesine giriş etmək istəyirsiz? (y/n)") == 'y':
-                    game()
+                    game(login)
                 else:
                     print("Giriş edilmedi")
         else:
             print("login ve ya parol yanlışdır")
 
-    def singup():
-        login = Login
-        password = Password
+    def singup(login,password):
         sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
         if sql.fetchone() is not None:
             print("Bu username artiq istifadə olunub")
@@ -151,12 +146,11 @@ def choice_func():
             data.commit()
             print("Qeydiyyatdan keçildiniz")
             if input("Giriş etmək istəyirsinizmi? (y/n): ") == 'y':
-                login_func()
+                login_func(login,password)
             else:
                 print("Giriş edilmedi")
 
-    def user_delete():
-        login = Login
+    def user_delete(login):
         sql.execute(f"DELETE FROM users WHERE login = '{login}'")
         print("Hesabınız uğurla silindi")
         data.commit()
@@ -167,19 +161,20 @@ def choice_func():
         choice_func() # Recursion
     else:
         if choice == '1':
-            singup()
+            singup(login,password)
         elif choice == '2':
-            login_func()
+            login_func(login,password)
         elif choice == '3':
-            game()
+            game(login)
         elif choice == '4':
-            user_delete()
+            user_delete(login)
         elif choice == '5':
-            login = Login
             sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
             cash_game = sql.fetchone()[0]
             print("Balansınız: ", cash_game)
 
 choice_func()
+
+
 
 # finish
