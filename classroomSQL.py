@@ -51,56 +51,63 @@ def choice_func():
     password = get_valid_pass("bir parol girin: ")
 
     def game(login):
-        sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
-        cash_game = sql.fetchone()[0]
-        start = input("Oyuna başlamaq üçün ENTER basın! (çıxmaq üçün (Q)): ")
-        if cash_game <= 0:
-            print("Balansınız yeterli deyil")
-        elif not start == '':
-            print("çıxış edildi")
-        else:
-            bet = random.randint(1, 10)
-            number_bytes = str(bet).encode()
-            hash_object = hashlib.sha256()
-            hash_object.update(number_bytes)
-            hex_dig = hash_object.hexdigest()
-            print("Mərcin doğruluğunu yoxlamaq üçün SHA256 hash'i mərcdən əvvəl göstərilir")
-            print(f"Sayının SHA256 hash'i: {hex_dig}")
-            guess = get_valid_int("Mərc üçün bir sayı gir: ")
-            if guess == bet:
-                print(f"Təbrik edirik, 10 azn qazandınız! düzgün say {bet} idi")
-                new_cash = cash_game + 10
-                sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
-                data.commit()
-                print("Balansınız: ", new_cash)
-                check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
-                number_bytes = str(check).encode()
-                hash_object = hashlib.sha256()
-                hash_object.update(number_bytes)
-                hex_dig = hash_object.hexdigest()
-                print(f"Sayının SHA256 hash'i: {hex_dig}")
-                continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
-                if continue_func == 'y':
-                    game(login)
-                else:
-                    print("Oyun sonlandırıldı")
+        sql.execute("SELECT * FROM users")
+        sqluser = sql.fetchall()
+        user_exists1 = any(login == user[0] for user in sqluser)
+        user_exists2 = any(password == user[1] for user in sqluser)
+        if user_exists1 and user_exists2:
+            sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+            cash_game = sql.fetchone()[0]
+            start = input("Oyuna başlamaq üçün ENTER basın! (çıxmaq üçün (Q)): ")
+            if cash_game <= 0:
+                print("Balansınız yeterli deyil")
+            elif not start == '':
+                print("çıxış edildi")
             else:
-                print(f"Uduzdun, 5 azn balansından çıxıldı! düzgün say {bet} idi")
-                new_cash = cash_game - 5
-                sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
-                data.commit()
-                print("Balansınız: ", new_cash)
-                check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
-                number_bytes = str(check).encode()
+                bet = random.randint(1, 10)
+                number_bytes = str(bet).encode()
                 hash_object = hashlib.sha256()
                 hash_object.update(number_bytes)
                 hex_dig = hash_object.hexdigest()
+                print("Mərcin doğruluğunu yoxlamaq üçün SHA256 hash'i mərcdən əvvəl göstərilir")
                 print(f"Sayının SHA256 hash'i: {hex_dig}")
-                continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
-                if continue_func == 'y':
-                    game(login)
+                guess = get_valid_int("Mərc üçün bir sayı gir: ")
+                if guess == bet:
+                    print(f"Təbrik edirik, 10 azn qazandınız! düzgün say {bet} idi")
+                    new_cash = cash_game + 10
+                    sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                    data.commit()
+                    print("Balansınız: ", new_cash)
+                    check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
+                    number_bytes = str(check).encode()
+                    hash_object = hashlib.sha256()
+                    hash_object.update(number_bytes)
+                    hex_dig = hash_object.hexdigest()
+                    print(f"Sayının SHA256 hash'i: {hex_dig}")
+                    continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
+                    if continue_func == 'y':
+                        game(login)
+                    else:
+                        print("Oyun sonlandırıldı")
                 else:
-                    print("Oyun sonlandırıldı")
+                    print(f"Uduzdun, 5 azn balansından çıxıldı! düzgün say {bet} idi")
+                    new_cash = cash_game - 5
+                    sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                    data.commit()
+                    print("Balansınız: ", new_cash)
+                    check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
+                    number_bytes = str(check).encode()
+                    hash_object = hashlib.sha256()
+                    hash_object.update(number_bytes)
+                    hex_dig = hash_object.hexdigest()
+                    print(f"Sayının SHA256 hash'i: {hex_dig}")
+                    continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
+                    if continue_func == 'y':
+                        game(login)
+                    else:
+                        print("Oyun sonlandırıldı")
+        else:
+            print("login ve ya parol yanlışdır")
 
     def login_func(login,password):
         sql.execute("SELECT * FROM users")
@@ -151,11 +158,18 @@ def choice_func():
                 print("Giriş edilmedi")
 
     def user_delete(login):
-        sql.execute(f"DELETE FROM users WHERE login = '{login}'")
-        print("Hesabınız uğurla silindi")
-        data.commit()
+        sql.execute("SELECT * FROM users")
+        sqluser = sql.fetchall()
+        user_exists1 = any(login == user[0] for user in sqluser)
+        user_exists2 = any(password == user[1] for user in sqluser)
+        if user_exists1 and user_exists2:
+            sql.execute(f"DELETE FROM users WHERE login = '{login}'")
+            print("Hesabınız uğurla silindi")
+            data.commit()
+        else:
+            print("login ve ya parol yanlışdır")
 
-    choicecheck = ["1","2","3","4","5"]
+    choicecheck = ["1","2","3","4","5","6"]
     if choice not in choicecheck:
         print("Yanlış seçim")
         choice_func() # Recursion
@@ -169,12 +183,48 @@ def choice_func():
         elif choice == '4':
             user_delete(login)
         elif choice == '5':
-            sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
-            cash_game = sql.fetchone()[0]
-            print("Balansınız: ", cash_game)
+            sql.execute("SELECT * FROM users")
+            sqluser = sql.fetchall()
+            user_exists1 = any(login == user[0] for user in sqluser)
+            user_exists2 = any(password == user[1] for user in sqluser)
+            if user_exists1 and user_exists2:
+                sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                cash_game = sql.fetchone()[0]
+                print("Balansınız: ", cash_game)
+            else:
+                print("login ve ya parol yanlışdır")
+        elif choice == '6':
+            sql.execute("SELECT * FROM users")
+            sqluser = sql.fetchall()
+            user_exists1 = any(login == user[0] for user in sqluser)
+            user_exists2 = any(password == user[1] for user in sqluser)
+            if user_exists1 and user_exists2:
+                update_user = input("Dəyişmək: (1) username (2) parol (3) hərikisi: ")
+                updatecheck = ["1","2","3"]
+                if update_user not in updatecheck:
+                    print("Yanlış seçim")
+                    choice_func() # Recursion
+                else:
+                    if update_user == '1':
+                        newLogin = get_valid_log("Yeni username daxil edin: ")
+                        sql.execute(f"UPDATE users SET login = '{newLogin}' WHERE login = '{login}'")
+                        data.commit()
+                        print("login uğurla dəyişdirildi")
+                        choice_func()
+                    elif update_user == '2':
+                        newPassword = get_valid_pass("Yeni parol daxil edin: ")
+                        sql.execute(f"UPDATE users SET password = '{newPassword}' WHERE login = '{login}'")
+                        data.commit()
+                        print("şifrə uğurla dəyişdirildi")
+                        choice_func()
+                    elif update_user == '3':
+                        newLogin = get_valid_log("Yeni username daxil edin: ")
+                        newPassword = get_valid_pass("Yeni parol daxil edin: ")
+                        sql.execute(f"UPDATE users SET login = '{newLogin}' WHERE login = '{login}'")
+                        sql.execute(f"UPDATE users SET password = '{newPassword}' WHERE login = '{login}'")
+                        data.commit()
+                        print("login və şifrə uğurla dəyişdirildi")
+                        choice_func()
 
 choice_func()
-
-
-
 # finish
