@@ -102,17 +102,16 @@ def choice_func():
             print("Giriş uğurlu oldu")
             choice_balance = input("Balansını artırmaq istəyirsinizmi? (y/n): ")
             if choice_balance == 'y':
-
-                def balance():
-                    sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
-                    user_cash = sql.fetchone()[0]
-                    deposit = get_valid_int("Artılacaq məbləği daxil edin: ")
-                    new_cash = user_cash + deposit
-                    sql.execute(f"UPDATE users SET cash = '{new_cash}'")
-                    data.commit()
-                    print("Balansınız artırıldı")
-                balance()
-
+                sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                user_cash = sql.fetchone()[0]
+                deposit = get_valid_int("Artılacaq məbləği daxil edin: ")
+                new_cash = user_cash + deposit
+                sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                data.commit()
+                print("Balansınız artırıldı")
+                sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                user_cash = sql.fetchone()[0]
+                print("Balansınız: ", user_cash)
                 if input("Oyun səhifəsinə giriş etmək istəyirsiz? (y/n): ") == 'y':
                     game(login)
                 else:
@@ -216,5 +215,6 @@ def choice_func():
         elif choice == '7':
             print("Çıxış edildi")
 choice_func()
+
 
 # finish
