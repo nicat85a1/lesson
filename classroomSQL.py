@@ -1,6 +1,5 @@
 import sqlite3
 import random
-import hashlib
 
 data = sqlite3.connect('aviator.db')
 sql = data.cursor()
@@ -215,6 +214,7 @@ def choice_func():
                     print("login ve ya parol yanlışdır")
                     choice_func() 
 choice_func()
+
 
 
 # finish
