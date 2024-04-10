@@ -21,19 +21,19 @@ def choice_func():
 
     def get_valid_log(prompt):
         while True:
-                value = input(prompt)
-                if len(value) > 20:
-                    print("Please enter no more than 20 characters?")
-                else:
-                    return value
+            value = input(prompt)
+            if len(value) > 20:
+                print("Please enter no more than 20 characters?")
+            else:
+                return value
                 
     def get_valid_pass(prompt):
         while True:
-                value = input(prompt)
-                if len(value) > 16:
-                    print("Please enter no more than 16 characters?")
-                else:
-                    return value
+            value = input(prompt)
+            if len(value) > 16:
+                print("Please enter no more than 16 characters?")
+            else:
+                return value
                 
     def get_valid_int(prompt):
         while True:
@@ -46,7 +46,8 @@ def choice_func():
             except ValueError:
                 print("Invalid input. Please enter numbers only.")
 
-    choice = input("Seçim edin (1) Qeydiyyatdan keçin (2) Giriş edin (3) Oyuna başla (4) İstifadəçini bazadan silin (5) Balansı yoxla: ")
+    choice = input("Seçim edin (1) Qeydiyyatdan keçin (2) Giriş edin (3) Oyuna başla (4) İstifadəçini bazadan silin (5) Balansı yoxla (6) login və ya parolu dəyiş (7) çıxış: ")
+    # (not: 7'de login parol girilir)
     login = get_valid_log("bir username girin: ")
     password = get_valid_pass("bir parol girin: ")
 
@@ -108,6 +109,7 @@ def choice_func():
                         print("Oyun sonlandırıldı")
         else:
             print("login ve ya parol yanlışdır")
+            choice_func()
 
     def login_func(login,password):
         sql.execute("SELECT * FROM users")
@@ -143,6 +145,7 @@ def choice_func():
                     print("Giriş edilmedi")
         else:
             print("login ve ya parol yanlışdır")
+            choice_func()
 
     def singup(login,password):
         sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
@@ -169,7 +172,7 @@ def choice_func():
         else:
             print("login ve ya parol yanlışdır")
 
-    choicecheck = ["1","2","3","4","5","6"]
+    choicecheck = ["1","2","3","4","5","6","7"]
     if choice not in choicecheck:
         print("Yanlış seçim")
         choice_func() # Recursion
@@ -225,6 +228,13 @@ def choice_func():
                         data.commit()
                         print("login və şifrə uğurla dəyişdirildi")
                         choice_func()
-
+            else:
+                print("login ve ya parol yanlışdır")
+                choice_func()
+        elif choice == '7':
+            print("Çıxış edildi")
 choice_func()
+
+
+
 # finish
