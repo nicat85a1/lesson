@@ -65,43 +65,25 @@ def choice_func():
             elif not start == '':
                 print("çıxış edildi")
             else:
-                bet = random.randint(1, 10)
-                number_bytes = str(bet).encode()
-                hash_object = hashlib.sha256()
-                hash_object.update(number_bytes)
-                hex_dig = hash_object.hexdigest()
-                print("Mərcin doğruluğunu yoxlamaq üçün SHA256 hash'i mərcdən əvvəl göstərilir")
-                print(f"Sayının SHA256 hash'i: {hex_dig}")
-                guess = get_valid_int("Mərc üçün bir sayı gir: ")
-                if guess == bet:
-                    print(f"Təbrik edirik, 10 azn qazandınız! düzgün say {bet} idi")
+                serverbet = random.randint(1, 10)
+                userbet = random.randint(1, 10)
+                if serverbet == userbet:
+                    print(f"Təbrik edirik, 10 azn qazandınız!")
                     new_cash = cash_game + 10
                     sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
                     data.commit()
                     print("Balansınız: ", new_cash)
-                    check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
-                    number_bytes = str(check).encode()
-                    hash_object = hashlib.sha256()
-                    hash_object.update(number_bytes)
-                    hex_dig = hash_object.hexdigest()
-                    print(f"Sayının SHA256 hash'i: {hex_dig}")
                     continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
                     if continue_func == 'y':
                         game(login)
                     else:
                         print("Oyun sonlandırıldı")
                 else:
-                    print(f"Uduzdun, 5 azn balansından çıxıldı! düzgün say {bet} idi")
+                    print(f"Uduzdun, 5 azn balansından çıxıldı!")
                     new_cash = cash_game - 5
                     sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
                     data.commit()
                     print("Balansınız: ", new_cash)
-                    check = get_valid_int("SHA256 kodunu doğrulamaq istəyirsiz? (düzgün sayını girin): ")
-                    number_bytes = str(check).encode()
-                    hash_object = hashlib.sha256()
-                    hash_object.update(number_bytes)
-                    hex_dig = hash_object.hexdigest()
-                    print(f"Sayının SHA256 hash'i: {hex_dig}")
                     continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
                     if continue_func == 'y':
                         game(login)
@@ -234,7 +216,5 @@ def choice_func():
         elif choice == '7':
             print("Çıxış edildi")
 choice_func()
-
-
 
 # finish
