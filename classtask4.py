@@ -3,3 +3,7 @@ class py_solution:
         return ' '.join(reversed(s.split()))
 
 print(py_solution().reverse_words('hello .py'))
+
+import itertools
+x = itertools.cycle('ABCD')
+print(type(x).__name__)
