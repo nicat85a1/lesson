@@ -71,15 +71,16 @@ z_tusu_basildi = False
 sag_kol_animasyonu = 0
 x_tusu_basildi = False
 
+aktif_sahne = 'sahne1'
+
+# Sahne arka planlarını yükle
+arka_plan1 = pygame.image.load('arka5.png')
+arka_plan2 = pygame.image.load('arka4.jpeg') 
+
 # Oyun döngüsünü çalıştır
 running = True
 while running:
     # Olayları işle
-
-    if insan_x > ekran_genisligi:
-        insan_x = 0
-    elif insan_x < 0:
-        insan_x = ekran_genisligi
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -151,12 +152,22 @@ while running:
             ziplama_yuksekligi = 60
             ziplama_sayisi = 0
 
-    # Ekranı temizle
-    screen.fill(BLACK)
-    background = pygame.image.load('arka.jpeg')
-    # Arka plan resmini ölçeklendir
-    # background = pygame.transform.scale(background, (ekran_genisligi, ekran_yuksekligi))
-    screen.blit(background, (0, 0))
+    if insan_x > ekran_genisligi:
+        aktif_sahne = 'sahne2' if aktif_sahne == 'sahne1' else 'sahne1'
+        insan_x = 0
+
+    # Karakter ekranın sol sınırını geçerse
+    elif insan_x < 0:
+        aktif_sahne = 'sahne2' if aktif_sahne == 'sahne1' else 'sahne1'
+        insan_x = ekran_genisligi
+
+    # Sahneye göre arka planı çiz
+    if aktif_sahne == 'sahne1':
+        screen.fill(BLACK)
+        screen.blit(arka_plan1, (0, 0))
+    else:
+        screen.fill(BLACK)
+        screen.blit(arka_plan2, (0, 0))
 
     # Kafa
     pygame.draw.circle(screen, WHITE, (insan_x, insan_y), kafa_radius)
