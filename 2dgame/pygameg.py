@@ -153,6 +153,10 @@ while running:
 
     # Ekranı temizle
     screen.fill(BLACK)
+    background = pygame.image.load('arka.jpeg')
+    # Arka plan resmini ölçeklendir
+    # background = pygame.transform.scale(background, (ekran_genisligi, ekran_yuksekligi))
+    screen.blit(background, (0, 0))
 
     # Kafa
     pygame.draw.circle(screen, WHITE, (insan_x, insan_y), kafa_radius)
