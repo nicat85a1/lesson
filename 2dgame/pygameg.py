@@ -56,6 +56,11 @@ maksimum_ziplama_sayisi = 2
 # Yürüme yönünü takip etmek için değişken
 yurume_yonu = 'sag'  # Varsayılan yön sağdır
 
+# Yüz ve gözlerin yönünü belirlemek için değişkenler
+yuz_yonu = 'sag'
+kol_yonu = 1
+bacak_yonu = 1
+
 # Oyun döngüsünü çalıştır
 running = True
 while running:
@@ -75,15 +80,17 @@ while running:
             if event.key in keys_pressed:
                 keys_pressed[event.key] = False
 
-    # Zıplama durumunu kontrol et
-    if ziplama_durumu:
-        insan_y += ziplama_yuksekligi
-        ziplama_yuksekligi += 1
-        if insan_y > orijinal_y:
-            insan_y = orijinal_y
-            ziplama_durumu = False
-            ziplama_yuksekligi = 60
-            ziplama_sayisi = 0
+    # Yürüme yönüne göre yüz, gözler ve vücut hareketlerinin yönünü güncelle
+    if keys_pressed[pygame.K_LEFT]:
+        yurume_yonu = 'sol'
+        yuz_yonu = 'sol'
+        kol_yonu = -1
+        bacak_yonu = -1
+    elif keys_pressed[pygame.K_RIGHT]:
+        yurume_yonu = 'sag'
+        yuz_yonu = 'sag'
+        kol_yonu = 1
+        bacak_yonu = 1
 
     # Tuş basılı durumunu kontrol et ve karakteri hareket ettir
     if keys_pressed[pygame.K_LEFT]:
@@ -112,20 +119,38 @@ while running:
         if diz_animasyonu > 15 or diz_animasyonu < -15:
             diz_hareket_yonu *= -1
 
+    # Zıplama durumunu kontrol et
+    if ziplama_durumu:
+        insan_y += ziplama_yuksekligi
+        ziplama_yuksekligi += 1
+        if insan_y > orijinal_y:
+            insan_y = orijinal_y
+            ziplama_durumu = False
+            ziplama_yuksekligi = 60
+            ziplama_sayisi = 0
+
     # Ekranı temizle
     screen.fill(BLACK)
 
     # Kafa
     pygame.draw.circle(screen, WHITE, (insan_x, insan_y), kafa_radius)
 
-    # Gözler
-    pygame.draw.circle(screen, BLUE, (insan_x + goz_mesafesi, insan_y - 5), goz_radius)
+    # Gözler (Yürüme yönüne göre)
+    if yuz_yonu == 'sag':
+        goz_sol_x = insan_x + goz_mesafesi
+        goz_sag_x = insan_x + goz_mesafesi * 2
+    else:
+        goz_sol_x = insan_x - goz_mesafesi
+        goz_sag_x = insan_x - goz_mesafesi * 2
+
+    pygame.draw.circle(screen, BLUE, (goz_sol_x, insan_y - 5), goz_radius)
+    pygame.draw.circle(screen, BLUE, (goz_sag_x, insan_y - 5), goz_radius)
 
     # Gövde
     pygame.draw.line(screen, WHITE, (insan_x, insan_y + kafa_radius), (insan_x, insan_y + kafa_radius + govde_uzunlugu), 2)
 
-    # Kollar (Yürüme animasyonu)
-    kol_acisi = math.radians(kol_animasyonu)
+    # Kollar (Yürüme yönüne göre)
+    kol_acisi = math.radians(kol_animasyonu * kol_yonu)
     sol_kol_x = insan_x + kol_uzunlugu * math.sin(kol_acisi)
     sag_kol_x = insan_x - kol_uzunlugu * math.sin(kol_acisi)
     sol_kol_y = insan_y + kafa_radius + kol_uzunlugu * math.cos(kol_acisi)
@@ -133,9 +158,9 @@ while running:
     pygame.draw.line(screen, WHITE, (insan_x, insan_y + kafa_radius), (sol_kol_x, sol_kol_y), 2)
     pygame.draw.line(screen, WHITE, (insan_x, insan_y + kafa_radius), (sag_kol_x, sag_kol_y), 2)
 
-    # Bacaklar (Yürüme animasyonu)
-    bacak_acisi = math.radians(bacak_animasyonu)
-    diz_acisi = math.radians(diz_animasyonu)
+    # Bacaklar (Yürüme yönüne göre)
+    bacak_acisi = math.radians(bacak_animasyonu * bacak_yonu)
+    diz_acisi = math.radians(diz_animasyonu * bacak_yonu)
 
     # Üst bacak
     sol_ust_bacak_x = insan_x + diz_uzunlugu * math.sin(bacak_acisi)
