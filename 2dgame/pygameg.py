@@ -1,6 +1,8 @@
 import pygame
 import math
 
+# baleci stickman
+
 # Pygame'ı başlat
 pygame.init()
 
