@@ -80,21 +80,12 @@ while running:
             if event.key in keys_pressed:
                 keys_pressed[event.key] = False
 
-    # Yürüme yönüne göre yüz, gözler ve vücut hareketlerinin yönünü güncelle
+    # Tuş basılı durumunu kontrol et ve karakteri hareket ettir
     if keys_pressed[pygame.K_LEFT]:
         yurume_yonu = 'sol'
         yuz_yonu = 'sol'
         kol_yonu = -1
         bacak_yonu = -1
-    elif keys_pressed[pygame.K_RIGHT]:
-        yurume_yonu = 'sag'
-        yuz_yonu = 'sag'
-        kol_yonu = 1
-        bacak_yonu = 1
-
-    # Tuş basılı durumunu kontrol et ve karakteri hareket ettir
-    if keys_pressed[pygame.K_LEFT]:
-        yurume_yonu = 'sol'
         insan_x -= 10
         kol_animasyonu += (animasyon_hizi * kol_hareket_yonu)
         bacak_animasyonu += (animasyon_hizi * bacak_hareket_yonu)
@@ -108,6 +99,9 @@ while running:
 
     if keys_pressed[pygame.K_RIGHT]:
         yurume_yonu = 'sag'
+        yuz_yonu = 'sag'
+        kol_yonu = 1
+        bacak_yonu = 1
         insan_x += 10
         kol_animasyonu += (animasyon_hizi * kol_hareket_yonu)
         bacak_animasyonu += (animasyon_hizi * bacak_hareket_yonu)
