@@ -86,30 +86,26 @@ while running:
         insan_x -= 10
         kol_animasyonu += (animasyon_hizi * kol_hareket_yonu)
         bacak_animasyonu += (animasyon_hizi * bacak_hareket_yonu)
+        diz_animasyonu += (animasyon_hizi * diz_hareket_yonu)
         if kol_animasyonu > 35 or kol_animasyonu < -35:
             kol_hareket_yonu *= -1
         if bacak_animasyonu > 25 or bacak_animasyonu < -25:
             bacak_hareket_yonu *= -1
-        if yurume_yonu == 'sol':
-            diz_hareket_yonu = -1
-            diz_animasyonu += (animasyon_hizi * diz_hareket_yonu)
-            if diz_animasyonu > 15 or diz_animasyonu < -15:
-                diz_hareket_yonu *= -1
+        if diz_animasyonu > 15 or diz_animasyonu < -15:
+            diz_hareket_yonu *= -1
 
     if keys_pressed[pygame.K_RIGHT]:
         yurume_yonu = 'sag'
         insan_x += 10
         kol_animasyonu += (animasyon_hizi * kol_hareket_yonu)
         bacak_animasyonu += (animasyon_hizi * bacak_hareket_yonu)
+        diz_animasyonu += (animasyon_hizi * diz_hareket_yonu)
         if kol_animasyonu > 35 or kol_animasyonu < -35:
             kol_hareket_yonu *= -1
         if bacak_animasyonu > 25 or bacak_animasyonu < -25:
             bacak_hareket_yonu *= -1
-        if yurume_yonu == 'sag':
-            diz_hareket_yonu = 1
-            diz_animasyonu += (animasyon_hizi * diz_hareket_yonu)
-            if diz_animasyonu > 15 or diz_animasyonu < -15:
-                diz_hareket_yonu *= -1
+        if diz_animasyonu > 15 or diz_animasyonu < -15:
+            diz_hareket_yonu *= -1
 
     # Ekranı temizle
     screen.fill(BLACK)
