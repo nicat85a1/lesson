@@ -11,6 +11,7 @@ pygame.display.set_caption('Hareket Eden İnsan')
 # Renkleri tanımla
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
 
 # İnsan figürünün başlangıç konumunu ayarla
 insan_x = 100
@@ -22,6 +23,10 @@ govde_uzunlugu = 70
 kol_uzunlugu = 70
 bacak_uzunlugu = 90
 diz_uzunlugu = bacak_uzunlugu / 2
+
+# Gözlerin boyutlarını ve konumunu ayarla
+goz_radius = 5
+goz_mesafesi = 10  # Kafa merkezinden gözlere olan yatay mesafe
 
 # Animasyon değişkenlerini ayarla
 kol_animasyonu = 0
@@ -112,6 +117,9 @@ while running:
 
     # Kafa
     pygame.draw.circle(screen, WHITE, (insan_x, insan_y), kafa_radius)
+
+    # Gözler
+    pygame.draw.circle(screen, BLUE, (insan_x + goz_mesafesi, insan_y - 5), goz_radius)
 
     # Gövde
     pygame.draw.line(screen, WHITE, (insan_x, insan_y + kafa_radius), (insan_x, insan_y + kafa_radius + govde_uzunlugu), 2)
