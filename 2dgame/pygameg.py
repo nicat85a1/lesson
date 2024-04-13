@@ -65,6 +65,8 @@ bacak_yonu = 1
 
 sol_kol_animasyonu = 0
 z_tusu_basildi = False
+sag_kol_animasyonu = 0
+x_tusu_basildi = False
 
 # Oyun döngüsünü çalıştır
 running = True
@@ -82,14 +84,20 @@ while running:
                     ziplama_yuksekligi = -15
                     ziplama_sayisi += 1
             if event.key == pygame.K_z:
-                sol_kol_animasyonu = 90
+                sol_kol_animasyonu = 100
                 z_tusu_basildi = True
+            if event.key == pygame.K_x:
+                sag_kol_animasyonu = 280
+                x_tusu_basildi = True
         elif event.type == pygame.KEYUP:
             if event.key in keys_pressed:
                 keys_pressed[event.key] = False
             if event.key == pygame.K_z:
                 sol_kol_animasyonu = 0
                 z_tusu_basildi = False
+            if event.key == pygame.K_x:
+                sag_kol_animasyonu = 0
+                x_tusu_basildi = False
 
     # Tuş basılı durumunu kontrol et ve karakteri hareket ettir
     if keys_pressed[pygame.K_LEFT]:
@@ -161,7 +169,12 @@ while running:
     else:
         # Z tuşuna basılmadığında çalışacak kod
         sol_kol_acisi = math.radians(kol_animasyonu * kol_yonu)
-    sag_kol_acisi = math.radians(kol_animasyonu * kol_yonu)  # Sağ kol için eski değişkeni kullan
+    if x_tusu_basildi:
+        # Z tuşuna basıldığında çalışacak kod
+        sag_kol_acisi = math.radians(sag_kol_animasyonu * kol_yonu)
+    else:
+        # Z tuşuna basılmadığında çalışacak kod
+        sag_kol_acisi = math.radians(kol_animasyonu * kol_yonu)
     sol_kol_x = insan_x + kol_uzunlugu * math.sin(sol_kol_acisi)
     sag_kol_x = insan_x - kol_uzunlugu * math.sin(sag_kol_acisi)
     sol_kol_y = insan_y + kafa_radius + kol_uzunlugu * math.cos(sol_kol_acisi)
