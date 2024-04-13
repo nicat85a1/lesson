@@ -10,6 +10,9 @@ pygame.init()
 screen = pygame.display.set_mode((1500, 800))
 pygame.display.set_caption('Hareket Eden İnsan')
 
+ekran_genisligi = 1500
+ekran_yuksekligi = 800
+
 # Renkleri tanımla
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -72,6 +75,12 @@ x_tusu_basildi = False
 running = True
 while running:
     # Olayları işle
+
+    if insan_x > ekran_genisligi:
+        insan_x = 0
+    elif insan_x < 0:
+        insan_x = ekran_genisligi
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
