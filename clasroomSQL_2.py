@@ -72,7 +72,7 @@ def password_confirm():
         print("Passwords are not compatible")
         return password_confirm()
     else:
-        raw_password = b'' + password_input.encode('utf-8')
+        raw_password = password_input.encode('utf-8')
         hashed_password = bcrypt.hashpw(raw_password, bcrypt.gensalt())
         sql_query = """
 
