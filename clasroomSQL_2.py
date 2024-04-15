@@ -80,7 +80,7 @@ def password_confirm():
                         VALUES (?, ?, ?, ?, ?)
 
                         """
-        sql.execute(sql_query, (username_input, first_name_input, last_name_input, email_input, hashed_password))
+        sql.execute(sql_query, (username_input, first_name_input, last_name_input, email_input, hashed_password)) # SQL injection fix
         #sql.execute(f"INSERT INTO users(username,first_name,last_name,email,password) VALUES ('{username_input}','{first_name_input}','{last_name_input}','{email_input}','{hashed_password}')")
         data.commit()
         print("success")
