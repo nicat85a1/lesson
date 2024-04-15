@@ -58,7 +58,7 @@ def choice_func():
             user_exists1 = any(login == user[0] for user in sqluser)
             user_exists2 = any(password == user[1] for user in sqluser)
             if user_exists1 and user_exists2:
-                sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
                 cash_game = sql.fetchone()[0]
                 start = input("Oyuna başlamaq üçün ENTER basın! (çıxmaq üçün (Q)): ")
                 if cash_game <= 0:
@@ -69,9 +69,9 @@ def choice_func():
                     serverbet = random.randint(1, 10)
                     userbet = random.randint(1, 10)
                     if serverbet == userbet:
-                        print(f"Təbrik edirik, 10 azn qazandınız!")
+                        print("Təbrik edirik, 10 azn qazandınız!")
                         new_cash = cash_game + 10
-                        sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                        sql.execute("UPDATE users SET cash = ? WHERE login = ?", (new_cash, login)) # fixed
                         data.commit()
                         print("Balansınız: ", new_cash)
                         continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
@@ -80,9 +80,9 @@ def choice_func():
                         else:
                             print("Oyun sonlandırıldı")
                     else:
-                        print(f"Uduzdun, 5 azn balansından çıxıldı!")
+                        print("Uduzdun, 5 azn balansından çıxıldı!")
                         new_cash = cash_game - 5
-                        sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                        sql.execute("UPDATE users SET cash = ? WHERE login = ?", (new_cash, login)) # fixed
                         data.commit()
                         print("Balansınız: ", new_cash)
                         continue_func = input("Səhifəni yeniləmək istəyirsiz? (y/n): ")
@@ -103,14 +103,14 @@ def choice_func():
                 print("Giriş uğurlu oldu")
                 choice_balance = input("Balansını artırmaq istəyirsinizmi? (y/n): ")
                 if choice_balance == 'y':
-                    sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                    sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
                     user_cash = sql.fetchone()[0]
                     deposit = get_valid_int("Artılacaq məbləği daxil edin: ")
                     new_cash = user_cash + deposit
-                    sql.execute(f"UPDATE users SET cash = '{new_cash}' WHERE login = '{login}'")
+                    sql.execute("UPDATE users SET cash = ? WHERE login = ?", (new_cash, login)) # fixed
                     data.commit()
                     print("Balansınız artırıldı")
-                    sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                    sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
                     user_cash = sql.fetchone()[0]
                     print("Balansınız: ", user_cash)
                     if input("Oyun səhifəsinə giriş etmək istəyirsiz? (y/n): ") == 'y':
@@ -118,7 +118,7 @@ def choice_func():
                     else:
                         print("Giriş edilmedi")
                 else:
-                    sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                    sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
                     user_cash = sql.fetchone()[0]
                     print("Balansınız: ", user_cash)
                     if input("Oyun sehifesine giriş etmək istəyirsiz? (y/n)") == 'y':
@@ -130,11 +130,11 @@ def choice_func():
                 choice_func()
 
         def singup(login,password):
-            sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+            sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
             if sql.fetchone() is not None:
                 print("Bu username artiq istifadə olunub")
             else:
-                sql.execute(f"INSERT INTO users(login, password, cash) VALUES ('{login}','{password}','{0}')")
+                sql.execute("INSERT INTO users(login, password, cash) VALUES (?,?,?)", (login,password,0)) # fixed
                 data.commit()
                 print("Qeydiyyatdan keçildiniz")
                 if input("Giriş etmək istəyirsinizmi? (y/n): ") == 'y':
@@ -148,7 +148,7 @@ def choice_func():
             user_exists1 = any(login == user[0] for user in sqluser)
             user_exists2 = any(password == user[1] for user in sqluser)
             if user_exists1 and user_exists2:
-                sql.execute(f"DELETE FROM users WHERE login = '{login}'")
+                sql.execute("DELETE FROM users WHERE login = ?", (login,)) # fixed
                 print("Hesabınız uğurla silindi")
                 data.commit()
             else:
@@ -173,7 +173,7 @@ def choice_func():
                 user_exists1 = any(login == user[0] for user in sqluser)
                 user_exists2 = any(password == user[1] for user in sqluser)
                 if user_exists1 and user_exists2:
-                    sql.execute(f"SELECT cash FROM users WHERE login = '{login}'")
+                    sql.execute("SELECT cash FROM users WHERE login = ?", (login,)) # fixed
                     cash_game = sql.fetchone()[0]
                     print("Balansınız: ", cash_game)
                 else:
@@ -192,21 +192,21 @@ def choice_func():
                     else:
                         if update_user == '1':
                             newLogin = get_valid_log("Yeni username daxil edin: ")
-                            sql.execute(f"UPDATE users SET login = '{newLogin}' WHERE login = '{login}'")
+                            sql.execute("UPDATE users SET login = ? WHERE login = ?", (newLogin, login)) # fixed
                             data.commit()
                             print("login uğurla dəyişdirildi")
                             choice_func()
                         elif update_user == '2':
                             newPassword = get_valid_pass("Yeni parol daxil edin: ")
-                            sql.execute(f"UPDATE users SET password = '{newPassword}' WHERE login = '{login}'")
+                            sql.execute("UPDATE users SET password = ? WHERE login = ?", (newPassword, login)) # fixed
                             data.commit()
                             print("şifrə uğurla dəyişdirildi")
                             choice_func()
                         elif update_user == '3':
                             newLogin = get_valid_log("Yeni username daxil edin: ")
                             newPassword = get_valid_pass("Yeni parol daxil edin: ")
-                            sql.execute(f"UPDATE users SET login = '{newLogin}' WHERE login = '{login}'")
-                            sql.execute(f"UPDATE users SET password = '{newPassword}' WHERE login = '{login}'")
+                            sql.execute("UPDATE users SET login = ? WHERE login = ?", (newLogin, login)) # fixed
+                            sql.execute("UPDATE users SET password = ? WHERE login = ?", (newPassword, login)) # fixed
                             data.commit()
                             print("login və şifrə uğurla dəyişdirildi")
                             choice_func()
