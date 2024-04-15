@@ -22,7 +22,7 @@ def choice_func():
         while True:
             value = input(prompt)
             if len(value) > 20:
-                print("Please enter no more than 20 characters?")
+                print("Please enter no more than 20 characters")
             else:
                 return value
                 
@@ -30,7 +30,9 @@ def choice_func():
         while True:
             value = input(prompt)
             if len(value) > 16:
-                print("Please enter no more than 16 characters?")
+                print("Please enter no more than 16 characters")
+            elif len(value) < 4:
+                print("Please enter at least 4 characters")
             else:
                 return value
                 
@@ -214,7 +216,5 @@ def choice_func():
                     print("login ve ya parol yanlışdır")
                     choice_func() 
 choice_func()
-
-
 
 # finish
