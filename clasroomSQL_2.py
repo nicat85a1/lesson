@@ -40,7 +40,7 @@ def get_valid_email(prompt):
     while True:
         value = input(prompt)
         #sql.execute(f"SELECT email FROM users WHERE email = '{value}'") 
-        sql.execute("SELECT email FROM users WHERE email = ?", (value,)) # SQL injection fix
+        sql.execute("SELECT email FROM users WHERE email = ?", (value,)) # SQL injection fix (string to tuple)
         if sql.fetchone() is not None:
             print("This email is now available") 
         else:
