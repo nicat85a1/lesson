@@ -2,6 +2,8 @@ import sqlite3
 import bcrypt
 import re
 
+import sqlversion2 # kimlik doğrulamalı version 2 (erişim izni gerekli) :)
+
 data = sqlite3.connect('Register.db')
 sql = data.cursor()
 sql.execute("""
