@@ -90,8 +90,18 @@ def password_confirm():
 
 password_confirm()
 
-
-
-
-
-# Finish
+"""def login():
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    sql.execute("SELECT * FROM users WHERE username = ?", (username,))
+    user = sql.fetchone()
+    if user:
+        if bcrypt.checkpw(password.encode('utf-8'), user[4]):
+            print("Login successful!")
+            return True
+        else:
+            print("Invalid password. Please try again.")
+    else:
+        print("Username not found. Please try again.")
+    return False
+login()""" # decrypt password denemesi
