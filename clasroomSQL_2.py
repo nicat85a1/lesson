@@ -2,7 +2,7 @@ import sqlite3
 import bcrypt
 import re
 
-import sqlversion2 # https://github.com/nicat85a1/lesson/blob/main/sqlversion2.py kimlik doğrulamalı version 2 (erişim izni gerekli) :)
+# import sqlversion2 # https://github.com/nicat85a1/lesson/blob/main/sqlversion2.py kimlik doğrulamalı version 2 (erişim izni gerekli) :)
 
 data = sqlite3.connect('Register.db')
 sql = data.cursor()
