@@ -2,6 +2,19 @@ import sqlite3
 import bcrypt
 import re
 
+# import hashlib
+
+"""password = "123456"
+hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+
+password2 = "123456"
+hashed_password2 = hashlib.sha256(password2.encode('utf-8')).hexdigest()
+
+if hashed_password == hashed_password2:
+    print("password match")
+else:
+    print("password not match")"""
+
 # import sqlversion2 # https://github.com/nicat85a1/lesson/blob/main/sqlversion2.py kimlik doğrulamalı version 2 (erişim izni gerekli) :)
 
 data = sqlite3.connect('Register.db')
