@@ -217,3 +217,22 @@ if -1 == True:
     print("True")
 else:
     print("False")
+    
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+class Student(Person):
+    def __init__(self, fname, lname, whath):
+        Person.__init__(self, fname, lname)
+        self.whath = whath
+
+    def printname(self):
+        print(self.firstname, self.lastname, self.whath)
+
+x = Student("Mike", "Olsen", "Student")
+x.printname()
