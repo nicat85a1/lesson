@@ -21,11 +21,29 @@ for i in x:
         file2 = open("C:/Users/user/Desktop/praktika3.txt","a+")
         file2.write(str(i)+" ")
         file2.close()
-    elif int(i) % 2 != 0:
+    else:
         try:
             cavab = int(i) / 0
         except ZeroDivisionError:
-            print("0 dan yuxarı reqemler yazilmadi")
+            print(f"{i} 2 ye bölünmür")
+
+print("-------------------------------------------------------------------------------------------------")
+
+file = open("C:/Users/user/Desktop/praktika2.txt","w")
+file.write("10 11 12 13 14 15 16 17 18 19 20")
+file = open("C:/Users/user/Desktop/praktika2.txt","r")
+x = file.read()
+x = x.split()
+for i in x:
+    try:
+        if int(i) % 2 == 0:
+            file2 = open("C:/Users/user/Desktop/praktika3.txt","a+")
+            file2.write(str(i)+" ")
+            file2.close()
+        else:
+            raise ValueError #(f"{i} 2 ye bölünmür")
+    except: # ValueError as e
+        print(f"{i} 2 ye bölünmür")
 
 # task3
 
@@ -48,7 +66,6 @@ for _ in range(3):
         if choise_shop == "iphone:":
             print(f"Məhsulun qiymeti: {x[1]}")
             total += int(x[1])
-            print(total)
             try:
                 if total >= 1500:
                     print(f"Sizin toplam məbləğiniz: {total}")
@@ -60,7 +77,6 @@ for _ in range(3):
         elif choise_shop == "samsung:":
             print(f"Məhsulun qiymeti: {x[3]}")
             total += int(x[3])
-            print(total)
             try:
                 if total >= 1500:
                     print(f"Sizin toplam məbləğiniz: {total}")
