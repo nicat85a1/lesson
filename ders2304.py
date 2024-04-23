@@ -1,17 +1,20 @@
 class Person:
     __wheel = 4
-    def __init__(self, fname,lname):
-        self.firstname=fname
-        self.lastname=lname
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
         self.wheel = Person.__wheel
 
-Person_ = Person("John", "Doe")
+    def person_info(self):
+        return f"Name: {self.firstname} {self.lastname}, Wheels: {self.wheel}"
 
-print(Person_.firstname, Person_.lastname)
+Person_ = Person("John", "Doe")
 
 class Student(Person):
     pass
 
-Student_ = Student("Mike",Person_.lastname)
+Student_ = Student("Mike", Person_.lastname)
 
-print(Student_.firstname, Student_.lastname, Person_.wheel)
+print(Person_.person_info())
+
+print(Student_.person_info())
