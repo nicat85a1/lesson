@@ -1,5 +1,5 @@
 # task 1
-"""from telethon.sync import TelegramClient
+from telethon.sync import TelegramClient
 import random
 import sys
 
@@ -7,7 +7,7 @@ def get_valid_usercode(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if value < 100000:
+            if value < 100000: # if len(value) != 6:
                 print("please enter the 6 digit code")
             elif value > 999999:
                 print("please enter the 6 digit code")
@@ -44,7 +44,7 @@ def usercode_func(luck):
             sys.exit()
         print(f"{luck} hakkınız kaldı")
         usercode_func(luck)
-usercode_func(luck)"""
+usercode_func(luck)
 
 # task json
 
@@ -63,7 +63,7 @@ print(my_json['adult'])"""
 
 # task 2
 
-import os
+"""import os
 
 def get_valid_name(prompt):
     while True:
@@ -136,4 +136,4 @@ elif choice == "2":
 elif choice == "3":
     three()
 elif choice == "4":
-    four()
+    four()"""
