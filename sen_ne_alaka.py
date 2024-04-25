@@ -1,4 +1,3 @@
-"""
 {
 "name": "john",
 "age": 30,
@@ -21,9 +20,8 @@ import json
 my_json = json.loads(json_str)
 print(type(my_json))
 print(my_json["name"])
-"""
 
-users = [
+"""users = [
     {
         "name": "john",
         "age": 30,
@@ -37,4 +35,4 @@ users = [
 print(type(users))
 
 for user in users:
-    print(user)
+    print(user)"""
